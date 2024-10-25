@@ -2,6 +2,24 @@
 
 ![Meta Data Analyst](https://tinypic.host/images/2024/10/25/Meta-Data-Analyst.png)
 
+
+## Overview
+
+Welcome to my portfolio! I have completed the Meta Data Analyst Professional Certificate, where I gained valuable skills and knowledge in data analysis, data management, and data visualization. This portfolio showcases the projects and assignments I completed during the course, highlighting my proficiency in key concepts and tools.
+
+## Table of Contents
+
+- [Course Summary](#course-summary)
+- [Skills Acquired](#skills-acquired)
+- [Projects](#projects)
+  - [Project 1: Data Cleaning and Preparation](#project-1-data-cleaning-and-preparation)
+  - [Project 2: Data Visualization](#project-2-data-visualization)
+  - [Project 3: Exploratory Data Analysis](#project-3-exploratory-data-analysis)
+  - [Project 4: Data Storytelling](#project-4-data-storytelling)
+- [Tools and Technologies](#tools-and-technologies)
+- [Conclusion](#conclusion)
+- [Contact Information](#contact-information)
+
 ## Portfolio Structure
 ```markdown
 /MyPortfolio
@@ -114,23 +132,6 @@
 
 ```
 
-
-## Overview
-
-Welcome to my portfolio! I have completed the Meta Data Analyst Professional Certificate, where I gained valuable skills and knowledge in data analysis, data management, and data visualization. This portfolio showcases the projects and assignments I completed during the course, highlighting my proficiency in key concepts and tools.
-
-## Table of Contents
-
-- [Course Summary](#course-summary)
-- [Skills Acquired](#skills-acquired)
-- [Projects](#projects)
-  - [Project 1: Data Cleaning and Preparation](#project-1-data-cleaning-and-preparation)
-  - [Project 2: Data Visualization](#project-2-data-visualization)
-  - [Project 3: Exploratory Data Analysis](#project-3-exploratory-data-analysis)
-  - [Project 4: Data Storytelling](#project-4-data-storytelling)
-- [Tools and Technologies](#tools-and-technologies)
-- [Conclusion](#conclusion)
-- [Contact Information](#contact-information)
 
 ## Course Summary
 

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Excel Files
+*.xlsx
+*.xls
+
+# Temporary files
+*.tmp
+*.log

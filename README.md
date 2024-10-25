@@ -108,7 +108,10 @@ Welcome to my portfolio! I have completed the Meta Data Analyst Professional Cer
 │   │   ├── 2_Understanding_Your_Data_Samples
 │   │   │   ├── Datasets
 │   │   │   ├── Screenshots
-│   │   └── 3_Testing_Your_Hypothesis
+│   │   ├── 3_Testing_Your_Hypothesis
+│   │   │   ├── Datasets
+│   │   │   ├── Screenshots
+│   │   └── 4_Data_Modeling
 │   │       ├── Datasets
 │   │       ├── Screenshots
 │   └── README.md  # Overview of statistics foundations projects
@@ -129,6 +132,7 @@ Welcome to my portfolio! I have completed the Meta Data Analyst Professional Cer
 ├── LICENSE
 ├── README.md  # Main overview of the entire portfolio
 └── requirements.txt
+
 
 ```
 

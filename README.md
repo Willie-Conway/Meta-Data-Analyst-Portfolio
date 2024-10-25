@@ -1,5 +1,8 @@
 # Meta Data Analyst Professional Certificate Portfolio
 
+![Meta Data Analyst](https://tinypic.host/images/2024/10/25/Meta-Data-Analyst.png)
+
+
 ## Overview
 
 Welcome to my portfolio! I have completed the Meta Data Analyst Professional Certificate, where I gained valuable skills and knowledge in data analysis, data management, and data visualization. This portfolio showcases the projects and assignments I completed during the course, highlighting my proficiency in key concepts and tools.

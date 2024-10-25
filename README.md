@@ -2,6 +2,118 @@
 
 ![Meta Data Analyst](https://tinypic.host/images/2024/10/25/Meta-Data-Analyst.png)
 
+## Portfolio Structure
+```markdown
+/MyPortfolio
+│
+├── /Data_Analysis_with_Spreadsheets_and_SQL
+│   ├── Commonly_Used_Spreadsheet_Tools.py
+│   ├── Data_Analysis_with_Spreadsheets.py
+│   ├── Explore_Data_Visually.py
+│   ├── Most_Profitable_Stores.twb
+│   ├── Overview_Of_Common_Chart_Types.py
+│   └── README.md  # Project description and usage instructions
+│
+├── /Data_Analytics
+│   ├── Case_Study.py
+│   ├── Data_Analysis_vs_Data_Science.py
+│   ├── Data_Exploration_Checklist.py
+│   ├── Data_Scrubbing_Checklist.py
+│   ├── Datasources.py
+│   ├── Different_Types_Of_Models.py
+│   ├── Experience_the_Power_of_GenAI.py
+│   ├── Exploring_and_Modeling_Data.py
+│   ├── Feature_Engineering.py
+│   ├── Generative_AI_Overview.py
+│   ├── Generative_AI_Response.py
+│   ├── Key_Points_on_GenAI_in_Data_Analytics.py
+│   ├── OSEMN_Framework.py
+│   ├── OSEMN_Framework_for_Cat_and_Dog_Products.py
+│   ├── Obtaining_Data.py
+│   ├── Obtaining_and_Scrubbing_Data.py
+│   ├── Validity_Of_Data_Checklist.py
+│   ├── iNterpreting_Data.py
+│   ├── iNterpreting_Data_and_Storytelling.py
+│   └── README.md  # Project description and usage instructions
+│
+├── /Data_Management
+│   ├── Big_Data_Management_Systems_Roundup.py
+│   ├── Compliance_Best_Practices.py
+│   ├── Data_Collection_Tool_Roundup.py
+│   ├── Data_Profiling_and_Validation_Tools_Roundup.py
+│   ├── Data_Storage_Formats.py
+│   ├── Data_Visualization_Tools_Roundup.py
+│   ├── Data_security_Fundamentals.py
+│   ├── Machine_Learning_Tools_Roundup.py
+│   ├── Storage_Solutions_Roundup.py
+│   ├── Storage_System_Roundup.py
+│   ├── Storage_Tools_Roundup.py
+│   └── Using_Data.py
+│
+├── /Python_Data_Analytics
+│   ├── /Jupyter_Notebooks
+│   │   ├── .ipynb_checkpoints
+│   │   ├── Aggregations.ipynb
+│   │   ├── Basic_Exploration.ipynb
+│   │   ├── Booleans_in_Python.ipynb
+│   │   ├── Conditional_Statements.ipynb
+│   │   ├── Creating_Explanatory_Visualizations.ipynb
+│   │   ├── Creating_Visualizations.ipynb
+│   │   ├── Dictionaries.ipynb
+│   │   ├── Exploration_-_Basic_Statistics.ipynb
+│   │   ├── Exploration_-_Filtering_Data.ipynb
+│   │   ├── Exploring_With_Visualizations.ipynb
+│   │   ├── Full_OSEMN.ipynb
+│   │   ├── Introduction_to_Libraries.ipynb
+│   │   ├── Lists_and_Tuples.ipynb
+│   │   ├── Modeling_with_Python.ipynb
+│   │   ├── Modifying_Values.ipynb
+│   │   ├── Removing_Data.ipynb
+│   │   ├── Selective_Subsets.ipynb
+│   │   ├── Subsets_with_Pandas.ipynb
+│   │   ├── Using_Pandas_and_Matplotlib_to_Create_Visualizations.ipynb
+│   │   └── Variables_in_Python.ipynb
+│   └── README.md  # Overview of Python data analytics projects
+│
+├── /Sample_Data
+│   ├── Activity_Dataset_Cleaned.xlsx
+│   ├── Activity_Dataset_Cleaning.xlsx
+│   ├── Home_Selling_Prices.xlsx
+│   ├── Website_Sales.xlsx
+│   └── README.md  # Description of the datasets
+│
+├── /Statistics_Foundations
+│   ├── /Capstones_Modules
+│   │   ├── 1_Getting_to_Know_the_Data
+│   │   │   ├── Datasets
+│   │   │   ├── Screenshots
+│   │   ├── 2_Understanding_Your_Data_Samples
+│   │   │   ├── Datasets
+│   │   │   ├── Screenshots
+│   │   └── 3_Testing_Your_Hypothesis
+│   │       ├── Datasets
+│   │       ├── Screenshots
+│   └── README.md  # Overview of statistics foundations projects
+│
+├── /Tableau
+│   ├── Age_and_Income_-_Cluster_Analysis.twb
+│   ├── Time_Series.twb
+│   └── README.md  # Overview of Tableau projects
+│
+├── /Excel
+│   ├── AB_Testing.ipynb
+│   ├── Capstone_Week_4_-_Show_Me_the_Model.ipynb
+│   └── README.md  # Overview of Excel projects
+│
+├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md  # Main overview of the entire portfolio
+└── requirements.txt
+
+```
+
 
 ## Overview
 

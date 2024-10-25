@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0807.0327                               -->
+<workbook original-version='18.1' source-build='2024.2.2 (20242.24.0807.0327)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Capstone Dataset (Capstone Dataset)' inline='true' name='federated.0t9gyto06vte7z1ehga821ks9k13' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Capstone Dataset' name='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/hirew/OneDrive/Desktop/Meta-Data-Analyst/Statistics Foundations/Capstones/Modules/1 - Getting to Know the Data/Datasets/Capstone Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+          <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+            <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+            <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+            <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+            <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+            <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+            <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+            <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+            <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+            <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+            <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+            <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+            <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+            <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+            <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+            <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+          <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+            <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+            <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+            <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+            <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+            <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+            <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+            <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+            <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+            <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+            <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+            <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+            <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+            <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+            <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+            <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q366:no:A1:Q366:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Campaign</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Facebook Ad Campaign]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Campaign</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Views]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Views</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Clicks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Clicks]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Clicks</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Conversions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Conversions]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Conversions</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cost per Facebook Ad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cost per Facebook Ad]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Cost per Facebook Ad</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Click-Through Rate (Clicks / View)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Click-Through Rate (Clicks / View)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Click-Through Rate (Clicks / View)</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Conversion Rate (Conversions / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Conversion Rate (Conversions / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Conversion Rate (Conversions / Clicks)</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Cost per Click (Ad Cost / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Cost per Click (Ad Cost / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Cost per Click (Ad Cost / Clicks)</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Campaign</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[AdWords Ad Campaign]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Campaign</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Views]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Views</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Clicks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Clicks]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Clicks</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Conversions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Conversions]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Conversions</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cost per AdWords Ad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cost per AdWords Ad]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Cost per AdWords Ad</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Click-Through Rate (Clicks / View)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Click-Through Rate (Clicks / View)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Click-Through Rate (Clicks / View)</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Conversion Rate (Conversions / Click)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Conversion Rate (Conversions / Click)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Conversion Rate (Conversions / Click)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Cost per Click (Ad Cost / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Cost per Click (Ad Cost / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Cost per Click (Ad Cost / Clicks)</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Residuals' datatype='integer' name='[Calculation_414049697967558656]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Facebook Ad Conversions] - (4286 + 0 * [Facebook Ad Clicks])' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Capstone Dataset' datatype='table' name='[__tableau_internal_object_id__].[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Capstone Dataset' id='Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28'>
+            <properties context=''>
+              <relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+                <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+                  <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+                  <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+                  <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+                  <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+                  <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+                  <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+                  <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+                  <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+                  <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+                  <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+                  <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+                  <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+                  <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+                  <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+                  <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' included-values='in-range'>
+            <min>0</min>
+            <max>16078</max>
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</cols>
+      </table>
+      <simple-id uuid='{EB687761-0AEC-4277-904D-DE8277520313}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C75A2CBF-2ECD-4378-8D63-32EE26622C0B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis' width='192'>
+      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
+      RU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

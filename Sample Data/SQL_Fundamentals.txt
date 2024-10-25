@@ -1,0 +1,22 @@
+// Writing SQL Queries
+
+=QUERY('Customer Data'!A:C, "SELECT A, B, C ORDER BY C DESC LIMIT 10", 1)
+
+=Query('Customer Data'!A1:H2000,"SELECT B, C, F ORDER BY F DESC LIMIT 10")
+
+=Query('Customer Data'!A1:H2000,"SELECT *")
+
+=Query('Customer Data'!A1:H2000,"SELECT C")
+
+=Query('Customer Data'!A1:H2000,"SELECT C, D WHERE F > 1 AND F < 5")
+
+=Query('Customer Data'!A1:H2000,"SELECT F, C, D WHERE F > 1 AND F < 5")
+
+
+// Functions in SQL
+
+=Query('Customer Data'!A1:H2000,"SELECT A, D * F")
+
+=Query('Customer Data'!A1:H2000,"SELECT AVG(D), MAX(F)")
+
+=Query('Customer Data'!A1:H2000,"SELECT H, COUNT(H) GROUP BY H")

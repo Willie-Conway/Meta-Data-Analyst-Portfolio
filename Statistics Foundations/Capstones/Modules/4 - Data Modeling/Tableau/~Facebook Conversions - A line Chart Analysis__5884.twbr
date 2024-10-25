@@ -1,0 +1,1407 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0807.0327                               -->
+<workbook original-version='18.1' source-build='2024.2.2 (20242.24.0807.0327)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Capstone Dataset (Capstone Dataset)' inline='true' name='federated.0t9gyto06vte7z1ehga821ks9k13' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Capstone Dataset' name='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/hirew/OneDrive/Desktop/Meta-Data-Analyst/Statistics Foundations/Capstones/Modules/1 - Getting to Know the Data/Datasets/Capstone Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+          <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+            <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+            <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+            <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+            <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+            <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+            <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+            <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+            <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+            <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+            <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+            <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+            <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+            <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+            <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+            <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+          <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+            <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+            <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+            <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+            <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+            <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+            <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+            <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+            <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+            <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+            <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+            <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+            <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+            <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+            <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+            <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Campaign</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Facebook Ad Campaign]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Campaign</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Views]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Views</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Clicks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Clicks]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Clicks</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Conversions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Conversions]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Conversions</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cost per Facebook Ad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cost per Facebook Ad]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Cost per Facebook Ad</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Click-Through Rate (Clicks / View)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Click-Through Rate (Clicks / View)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Click-Through Rate (Clicks / View)</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Conversion Rate (Conversions / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Conversion Rate (Conversions / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Conversion Rate (Conversions / Clicks)</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Cost per Click (Ad Cost / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Cost per Click (Ad Cost / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Cost per Click (Ad Cost / Clicks)</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Campaign</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[AdWords Ad Campaign]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Campaign</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Views]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Views</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Clicks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Clicks]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Clicks</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Conversions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Conversions]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Conversions</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cost per AdWords Ad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cost per AdWords Ad]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Cost per AdWords Ad</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Click-Through Rate (Clicks / View)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Click-Through Rate (Clicks / View)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Click-Through Rate (Clicks / View)</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Conversion Rate (Conversions / Click)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Conversion Rate (Conversions / Click)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Conversion Rate (Conversions / Click)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Cost per Click (Ad Cost / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Cost per Click (Ad Cost / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Cost per Click (Ad Cost / Clicks)</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q366:no:A1:Q366:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Residuals' datatype='integer' name='[Calculation_414049697967558656]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Facebook Ad Conversions] - (4286 + 0 * [Facebook Ad Clicks])' />
+      </column>
+      <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Capstone Dataset' datatype='table' name='[__tableau_internal_object_id__].[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]' role='measure' type='quantitative' />
+      <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (MONTH(Date))' hidden='true' name='[Action (MONTH(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[mn:Date:ok]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0t9gyto06vte7z1ehga821ks9k13]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[mn:Date:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>9</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>10</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>11</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>12</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>4</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Capstone Dataset' id='Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28'>
+            <properties context=''>
+              <relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+                <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+                  <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+                  <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+                  <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+                  <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+                  <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+                  <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+                  <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+                  <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+                  <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+                  <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+                  <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+                  <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+                  <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+                  <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+                  <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_1DCFCB657CD8497F99240DED3512FBB7]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview of Facebook Ad Clicks' type='sheet' worksheet='Facebook Ad Clicks: A line Chart Analysis' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview of Facebook Ad Clicks' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_B68FD4EB8E63424A93F63577E3148AE3]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview of Facebook Ad Conversions' type='sheet' worksheet='Facebook Ad Conversions: A line Chart Analysis' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview of Facebook Ad Conversions' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</cols>
+      </table>
+      <simple-id uuid='{EB687761-0AEC-4277-904D-DE8277520313}' />
+    </worksheet>
+    <worksheet name='Facebook Ad Clicks: A line Chart Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Facebook Ad Clicks : A line Chart Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{B650E958-8CFD-4F50-A646-60EA5D7A96F9}' />
+    </worksheet>
+    <worksheet name='Facebook Ad Conversions: A line Chart Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Facebook Ad Conversions: A line Chart Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{0D56CAD9-8892-412B-89B1-7F6C0D2C981B}' />
+    </worksheet>
+    <worksheet name='Monthly Analysis of Facebook Ad Clicks '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Monthly Analysis of Facebook Ad Clicks </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[mn:Date:ok]' user:ui-action-filter='[Action1_1DCFCB657CD8497F99240DED3512FBB7]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <text column='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' />
+              <color column='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' />
+              <size column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{E481058E-4AE1-4931-8F98-0AED08473AEB}' />
+    </worksheet>
+    <worksheet name='Monthly Analysis of Facebook Ad Conversions '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Monthly Analysis of Facebook Ad Conversions</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[mn:Date:ok]' user:ui-action-filter='[Action2_B68FD4EB8E63424A93F63577E3148AE3]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' />
+              <text column='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' />
+              <color column='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BFD146C5-F58F-4DDC-93EA-3FF0F4C850FC}' />
+    </worksheet>
+    <worksheet name='Quarterly Analysis of Facebook Ad Clicks '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Quarterly Analysis of Facebook Ad Clicks </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Date]' derivation='Quarter' name='[qr:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[mn:Date:ok]' user:ui-action-filter='[Action1_1DCFCB657CD8497F99240DED3512FBB7]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' palette='sunrise_sunset_diverging_10_0' symmetric='false' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[qr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{67DFC852-2D45-4CDD-9E36-F066C37F3942}' />
+    </worksheet>
+    <worksheet name='Quarterly Analysis of Facebook Ad Conversions '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Quarterly Analysis of Facebook Ad Conversions</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Date]' derivation='Quarter' name='[qr:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]'>
+            <groupfilter function='level-members' level='[mn:Date:ok]' user:ui-action-filter='[Action2_B68FD4EB8E63424A93F63577E3148AE3]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[Action (MONTH(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[qr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{CBB32C35-9751-426F-9C59-27FC990200F2}' />
+    </worksheet>
+    <worksheet name='Residuals Analysis of Facebook Ad Conversions'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Residuals Analysis of Facebook Ad Conversions</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column caption='Residuals' datatype='integer' name='[Calculation_414049697967558656]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Facebook Ad Conversions] - (4286 + 0 * [Facebook Ad Clicks])' />
+            </column>
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_414049697967558656]' derivation='Sum' name='[sum:Calculation_414049697967558656:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' included-values='in-range'>
+            <min>0</min>
+            <max>16078</max>
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Calculation_414049697967558656:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</cols>
+      </table>
+      <simple-id uuid='{7E214E67-0A8A-4C71-B43D-62D9F6CBBB60}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Overview of Facebook Ad Clicks'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#59a14f' fontname='Tableau Bold'>Overview of Facebook Ad Clicks</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='24' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='5125' id='25' type-v2='title' w='98400' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='92875' id='22' type-v2='layout-basic' w='98400' x='800' y='6125'>
+              <zone h='46437' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='6125'>
+                <zone h='46437' id='5' type-v2='layout-basic' w='82400' x='800' y='6125'>
+                  <zone h='46437' id='3' name='Facebook Ad Clicks: A line Chart Analysis' w='82400' x='800' y='6125'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone fixed-size='160' h='46437' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='6125'>
+                  <zone h='8125' id='8' name='Facebook Ad Clicks: A line Chart Analysis' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' type-v2='color' w='16000' x='83200' y='6125'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='33250' id='10' name='Monthly Analysis of Facebook Ad Clicks ' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' type-v2='color' w='16000' x='83200' y='14250'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+              <zone h='46438' id='9' name='Monthly Analysis of Facebook Ad Clicks ' w='49200' x='800' y='52562'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='46438' id='11' name='Quarterly Analysis of Facebook Ad Clicks ' w='49200' x='50000' y='52562'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#59a14f' fontname='Tableau Bold'>Overview of Facebook Ad Clicks</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='31' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='30' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='5125' id='25' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46437' id='3' is-fixed='true' name='Facebook Ad Clicks: A line Chart Analysis' w='82400' x='800' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='8' name='Facebook Ad Clicks: A line Chart Analysis' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' type-v2='color' w='16000' x='83200' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46438' id='9' is-fixed='true' name='Monthly Analysis of Facebook Ad Clicks ' w='49200' x='800' y='52562'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='33250' id='10' name='Monthly Analysis of Facebook Ad Clicks ' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' type-v2='color' w='16000' x='83200' y='14250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46438' id='11' is-fixed='true' name='Quarterly Analysis of Facebook Ad Clicks ' w='49200' x='50000' y='52562'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{BF6B7FE1-9117-4617-83C0-EC617FBA05F9}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Overview of Facebook Ad Conversions'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#59a14f' fontname='Tableau Bold'>Overview of Facebook Ad Conversions</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='13' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='5125' id='14' type-v2='title' w='98400' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='92875' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='6125'>
+              <zone h='92875' id='5' type-v2='layout-basic' w='82400' x='800' y='6125'>
+                <zone h='46437' id='3' name='Facebook Ad Conversions: A line Chart Analysis' w='82400' x='800' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46438' id='9' name='Quarterly Analysis of Facebook Ad Conversions ' w='41200' x='42000' y='52562'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46438' id='10' name='Monthly Analysis of Facebook Ad Conversions ' w='41200' x='800' y='52562'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone fixed-size='160' h='92875' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='6125'>
+                <zone h='8125' id='8' name='Facebook Ad Conversions: A line Chart Analysis' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' type-v2='color' w='16000' x='83200' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='33250' id='11' name='Monthly Analysis of Facebook Ad Conversions ' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' type-v2='color' w='16000' x='83200' y='14250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#59a14f' fontname='Tableau Bold'>Overview of Facebook Ad Conversions</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='18' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='17' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='5125' id='14' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46437' id='3' is-fixed='true' name='Facebook Ad Conversions: A line Chart Analysis' w='82400' x='800' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='8' name='Facebook Ad Conversions: A line Chart Analysis' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' type-v2='color' w='16000' x='83200' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46438' id='10' is-fixed='true' name='Monthly Analysis of Facebook Ad Conversions ' w='41200' x='800' y='52562'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='33250' id='11' name='Monthly Analysis of Facebook Ad Conversions ' pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' type-v2='color' w='16000' x='83200' y='14250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46438' id='9' is-fixed='true' name='Quarterly Analysis of Facebook Ad Conversions ' w='41200' x='42000' y='52562'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{79D69DB7-23AA-4C0B-9873-47674825A08C}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C75A2CBF-2ECD-4378-8D63-32EE26622C0B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Residuals Analysis of Facebook Ad Conversions'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{87019010-DDEF-4D36-88BD-CA209E0264F3}' />
+    </window>
+    <window class='worksheet' name='Facebook Ad Clicks: A line Chart Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{466B113D-9E84-425A-A14B-AF02B409AF1D}' />
+    </window>
+    <window class='worksheet' name='Facebook Ad Conversions: A line Chart Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8CF7D476-49D1-4953-A4D2-CCC61B1F4A8C}' />
+    </window>
+    <window class='worksheet' name='Monthly Analysis of Facebook Ad Clicks '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5F9D92DC-CE75-4E9F-9049-840932D00C17}' />
+    </window>
+    <window class='worksheet' name='Quarterly Analysis of Facebook Ad Clicks '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9EDF25F8-0440-4578-9D4E-095C0B3D1C3A}' />
+    </window>
+    <window class='worksheet' name='Monthly Analysis of Facebook Ad Conversions '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E038AAB4-FCFE-458E-BB69-E06E7CD607AA}' />
+    </window>
+    <window class='worksheet' name='Quarterly Analysis of Facebook Ad Conversions '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C284BE66-79EB-4AED-A02D-2A1803559A5F}' />
+    </window>
+    <window class='dashboard' name='Overview of Facebook Ad Clicks'>
+      <viewpoints>
+        <viewpoint name='Facebook Ad Clicks: A line Chart Analysis'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Monthly Analysis of Facebook Ad Clicks ' />
+        <viewpoint name='Quarterly Analysis of Facebook Ad Clicks '>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{B405ACC9-464B-4402-8B84-171B3F0CC1C9}' />
+    </window>
+    <window class='dashboard' name='Overview of Facebook Ad Conversions'>
+      <viewpoints>
+        <viewpoint name='Facebook Ad Conversions: A line Chart Analysis'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Monthly Analysis of Facebook Ad Conversions ' />
+        <viewpoint name='Quarterly Analysis of Facebook Ad Conversions '>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{62C62F48-7785-48B0-8D90-437992FCC113}' />
+    </window>
+  </windows>
+</workbook>

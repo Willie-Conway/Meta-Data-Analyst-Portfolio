@@ -1,0 +1,7 @@
+age,purchase_amount,gender_M,days_since_signup
+25.0,200.0,False,1735
+30.0,150.0,True,1614
+35.0,260.0,True,1369
+35.0,300.0,False,1249
+45.0,400.0,True,1004
+50.0,250.0,True,884

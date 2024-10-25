@@ -1,0 +1,11 @@
+product_id,product_name,category,price,market_share
+1,Wireless Mouse,Electronics,25.99,15
+2,Office Chair,Furniture,149.99,10
+3,Smartphone,Electronics,699.99,25
+4,Kitchen Blender,Home Appliances,59.99,5
+5,Laptop,Electronics,999.99,20
+6,Desk Lamp,Furniture,35.99,8
+7,Air Fryer,Home Appliances,89.99,7
+8,Wireless Headphones,Electronics,199.99,12
+9,Portable Charger,Electronics,29.99,14
+10,Smartwatch,Electronics,249.99,18

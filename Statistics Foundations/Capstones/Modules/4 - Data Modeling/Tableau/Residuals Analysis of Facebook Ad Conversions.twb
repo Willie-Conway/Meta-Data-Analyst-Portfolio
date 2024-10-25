@@ -1,0 +1,924 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0807.0327                               -->
+<workbook original-version='18.1' source-build='2024.2.2 (20242.24.0807.0327)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Capstone Dataset (Capstone Dataset)' inline='true' name='federated.0t9gyto06vte7z1ehga821ks9k13' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Capstone Dataset' name='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/hirew/OneDrive/Desktop/Meta-Data-Analyst/Statistics Foundations/Capstones/Modules/1 - Getting to Know the Data/Datasets/Capstone Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+          <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+            <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+            <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+            <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+            <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+            <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+            <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+            <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+            <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+            <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+            <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+            <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+            <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+            <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+            <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+            <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+          <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+            <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+            <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+            <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+            <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+            <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+            <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+            <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+            <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+            <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+            <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+            <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+            <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+            <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+            <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+            <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Campaign</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Facebook Ad Campaign]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Campaign</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Views]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Views</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Clicks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Clicks]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Clicks</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Ad Conversions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Facebook Ad Conversions]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Ad Conversions</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cost per Facebook Ad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cost per Facebook Ad]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Cost per Facebook Ad</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Click-Through Rate (Clicks / View)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Click-Through Rate (Clicks / View)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Click-Through Rate (Clicks / View)</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Conversion Rate (Conversions / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Conversion Rate (Conversions / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Conversion Rate (Conversions / Clicks)</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facebook Cost per Click (Ad Cost / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Facebook Cost per Click (Ad Cost / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Facebook Cost per Click (Ad Cost / Clicks)</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Campaign</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[AdWords Ad Campaign]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Campaign</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Views]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Views</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Clicks</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Clicks]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Clicks</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Ad Conversions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AdWords Ad Conversions]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Ad Conversions</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cost per AdWords Ad</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cost per AdWords Ad]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>Cost per AdWords Ad</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Click-Through Rate (Clicks / View)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Click-Through Rate (Clicks / View)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Click-Through Rate (Clicks / View)</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Conversion Rate (Conversions / Click)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Conversion Rate (Conversions / Click)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Conversion Rate (Conversions / Click)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AdWords Cost per Click (Ad Cost / Clicks)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AdWords Cost per Click (Ad Cost / Clicks)]</local-name>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias>AdWords Cost per Click (Ad Cost / Clicks)</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Capstone Dataset]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q366:no:A1:Q366:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Residuals' datatype='integer' name='[Calculation_414049697967558656]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Facebook Ad Conversions] - (4286 + 0 * [Facebook Ad Clicks])' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Capstone Dataset' datatype='table' name='[__tableau_internal_object_id__].[Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Capstone Dataset' id='Capstone Dataset_E7B8C054B06A45C0AC0742A4B9293F28'>
+            <properties context=''>
+              <relation connection='excel-direct.16e9tga1d0b41t10zb6dz0v9e0i6' name='Capstone Dataset' table='[&apos;Capstone Dataset$&apos;]' type='table'>
+                <columns gridOrigin='A1:Q366:no:A1:Q366:0' header='yes' outcome='2'>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='string' name='Facebook Ad Campaign' ordinal='1' />
+                  <column datatype='integer' name='Facebook Ad Views' ordinal='2' />
+                  <column datatype='integer' name='Facebook Ad Clicks' ordinal='3' />
+                  <column datatype='integer' name='Facebook Ad Conversions' ordinal='4' />
+                  <column datatype='integer' name='Cost per Facebook Ad' ordinal='5' />
+                  <column datatype='real' name='Facebook Click-Through Rate (Clicks / View)' ordinal='6' />
+                  <column datatype='real' name='Facebook Conversion Rate (Conversions / Clicks)' ordinal='7' />
+                  <column datatype='real' name='Facebook Cost per Click (Ad Cost / Clicks)' ordinal='8' />
+                  <column datatype='string' name='AdWords Ad Campaign' ordinal='9' />
+                  <column datatype='integer' name='AdWords Ad Views' ordinal='10' />
+                  <column datatype='integer' name='AdWords Ad Clicks' ordinal='11' />
+                  <column datatype='integer' name='AdWords Ad Conversions' ordinal='12' />
+                  <column datatype='integer' name='Cost per AdWords Ad' ordinal='13' />
+                  <column datatype='real' name='AdWords Click-Through Rate (Clicks / View)' ordinal='14' />
+                  <column datatype='real' name='AdWords Conversion Rate (Conversions / Click)' ordinal='15' />
+                  <column datatype='real' name='AdWords Cost per Click (Ad Cost / Clicks)' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Facebook Ad Conversions]' derivation='Sum' name='[sum:Facebook Ad Conversions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</cols>
+      </table>
+      <simple-id uuid='{EB687761-0AEC-4277-904D-DE8277520313}' />
+    </worksheet>
+    <worksheet name='Facebook Ad Clicks vs. Conversions: A line Chart Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Facebook Ad Clicks vs. Conversions: A line Chart Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[mn:Date:ok]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</cols>
+      </table>
+      <simple-id uuid='{B650E958-8CFD-4F50-A646-60EA5D7A96F9}' />
+    </worksheet>
+    <worksheet name='Residuals Analysis of Facebook Ad Conversions'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#e15759' fontname='Tableau Bold'>Residuals Analysis of Facebook Ad Conversions</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Capstone Dataset (Capstone Dataset)' name='federated.0t9gyto06vte7z1ehga821ks9k13' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0t9gyto06vte7z1ehga821ks9k13'>
+            <column caption='Residuals' datatype='integer' name='[Calculation_414049697967558656]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Facebook Ad Conversions] - (4286 + 0 * [Facebook Ad Clicks])' />
+            </column>
+            <column datatype='integer' name='[Facebook Ad Clicks]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Facebook Ad Conversions]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_414049697967558656]' derivation='Sum' name='[sum:Calculation_414049697967558656:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Facebook Ad Clicks]' derivation='Sum' name='[sum:Facebook Ad Clicks:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' included-values='in-range'>
+            <min>0</min>
+            <max>16078</max>
+          </filter>
+          <slices>
+            <column>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Calculation_414049697967558656:qk]</rows>
+        <cols>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</cols>
+      </table>
+      <simple-id uuid='{7E214E67-0A8A-4C71-B43D-62D9F6CBBB60}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]</field>
+                  <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Conversions:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>16078</value>
+                <value>4286</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[yr:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C75A2CBF-2ECD-4378-8D63-32EE26622C0B}' />
+    </window>
+    <window class='worksheet' name='Residuals Analysis of Facebook Ad Conversions'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0t9gyto06vte7z1ehga821ks9k13].[sum:Facebook Ad Clicks:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[yr:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{87019010-DDEF-4D36-88BD-CA209E0264F3}' />
+    </window>
+    <window class='worksheet' name='Facebook Ad Clicks vs. Conversions: A line Chart Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0t9gyto06vte7z1ehga821ks9k13].[yr:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{466B113D-9E84-425A-A14B-AF02B409AF1D}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Facebook Ad Clicks vs. Conversions: A Scatter Plot Analysis' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Facebook Ad Clicks vs. Conversions: A line Chart Analysis' width='192'>
+      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
+      zDcAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Residuals Analysis of Facebook Ad Conversions' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

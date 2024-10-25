@@ -1,0 +1,11 @@
+post_id,user_id,content,likes,shares,date
+1,101,"Excited to launch our new product!",150,25,"2023-02-01"
+2,102,"Check out our latest blog post on sustainability.",200,35,"2023-02-02"
+3,103,"Just wrapped up an amazing team meeting!",100,15,"2023-02-03"
+4,101,"Have you tried our new service yet?",250,50,"2023-02-04"
+5,104,"Our community event was a huge success!",300,60,"2023-02-05"
+6,105,"Throwback to our last year's conference!",75,10,"2023-02-06"
+7,102,"Happy to announce our partnership with XYZ!",400,70,"2023-02-07"
+8,106,"Here are some behind-the-scenes shots!",180,40,"2023-02-08"
+9,107,"Join us for our upcoming webinar on AI!",350,45,"2023-02-09"
+10,101,"Thank you for all the support!",500,100,"2023-02-10"

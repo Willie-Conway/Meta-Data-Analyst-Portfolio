@@ -1,0 +1,101 @@
+CustomerID,Age,gender,SeniorCitizen,Partner,Dependents,Tenure,PhoneService,MultipleLines,InternetService,DeviceProtection,PaperlessBilling,PaymentMethod,TotalCharges
+5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9,56,Male,1,No,Yes,63,No,Yes,Fiber optic,No,No,Electronic check,118.64
+6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b,69,Female,0,No,No,62,Yes,No,No,No,Yes,Mailed check,110.47
+d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35,23,Male,0,No,Yes,68,Yes,Yes,DSL,No,Yes,Bank transfer (automatic),103.28
+4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce,32,Female,1,No,No,21,Yes,Yes,Fiber optic,Yes,Yes,Bank transfer (automatic),102.5
+4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a,60,Female,1,Yes,Yes,66,Yes,Yes,No,No,Yes,Credit card (automatic),117.99
+ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d,25,Female,0,Yes,No,25,No,Yes,No,No,Yes,Bank transfer (automatic),107.55
+e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683,78,Female,1,No,No,15,No,No,DSL,Yes,No,Electronic check,104.98
+7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451,38,Male,1,No,No,50,Yes,No,DSL,No,Yes,Bank transfer (automatic),90.29
+2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3,56,Male,0,Yes,No,56,No,Yes,DSL,Yes,Yes,Mailed check,111.31
+19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7,75,Female,0,Yes,No,28,Yes,Yes,Fiber optic,No,No,Bank transfer (automatic),111.53
+4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5,36,Female,1,No,No,68,No,No,DSL,Yes,Yes,Credit card (automatic),80.02
+4fc82b26aecb47d2868c4efbe3581732a3e7cbcc6c2efb32062c08170a05eeb8,8,Male,0,Yes,Yes,46,Yes,Yes,No,Yes,No,Bank transfer (automatic),107.95
+6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918,28,Female,0,No,Yes,61,Yes,No,No,No,No,Mailed check,117.44
+3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278,28,Female,1,Yes,Yes,68,Yes,Yes,DSL,Yes,No,Mailed check,100.0
+8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61,10,Female,0,No,No,15,Yes,Yes,DSL,Yes,Yes,Electronic check,101.1
+e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb,70,Male,0,Yes,No,47,Yes,No,No,Yes,Yes,Bank transfer (automatic),78.0
+b17ef6d19c7a5b1ee83b907c595526dcb1eb06db8227d650d5dda0a9f4ce8cd9,53,Male,1,No,No,38,Yes,Yes,Fiber optic,Yes,Yes,Mailed check,106.92
+4523540f1504cd17100c4835e85b7eefd49911580f8efff0599a8f283be6b9e3,57,Male,1,Yes,No,32,No,No,DSL,Yes,No,Credit card (automatic),65.85
+4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a,41,Female,0,Yes,Yes,22,Yes,Yes,DSL,Yes,Yes,Electronic check,112.49
+9400f1b21cb527d7fa3d3eabba93557a18ebe7a2ca4e471cfe5e4c5b4ca7f767,4,Female,0,No,Yes,9,No,Yes,No,No,Yes,Credit card (automatic),107.99
+f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b,39,Male,1,Yes,No,68,Yes,Yes,DSL,Yes,Yes,Bank transfer (automatic),102.79
+6f4b6612125fb3a0daecd2799dfd6c9c299424fd920f9b308110a2c1fbd8f443,70,Male,1,No,Yes,33,No,No,Fiber optic,Yes,No,Bank transfer (automatic),118.42
+785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09,19,Male,1,Yes,Yes,51,No,Yes,No,No,No,Bank transfer (automatic),112.14
+535fa30d7e25dd8a49f1536779734ec8286108d115da5045d77f3b4185d8f790,41,Male,1,No,No,9,No,Yes,DSL,No,Yes,Electronic check,118.51
+c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db,18,Female,0,Yes,Yes,18,Yes,Yes,No,No,Yes,Mailed check,110.67
+b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569,47,Male,1,No,No,57,Yes,Yes,DSL,No,Yes,Electronic check,103.04
+5f9c4ab08cac7457e9111a30e4664920607ea2c115a1433d7be98e97e64244ca,55,Female,1,Yes,Yes,0,No,No,DSL,No,Yes,Credit card (automatic),115.88
+670671cd97404156226e507973f2ab8330d3022ca96e0c93bdbdb320c41adcaf,19,Male,0,No,No,68,Yes,No,DSL,No,No,Electronic check,100.0
+59e19706d51d39f66711c2653cd7eb1291c94d9b55eb14bda74ce4dc636d015a,77,Female,1,Yes,No,3,No,Yes,Fiber optic,No,No,Credit card (automatic),100.0
+35135aaa6cc23891b40cb3f378c53a17a1127210ce60e125ccf03efcfdaec458,38,Male,0,No,No,15,Yes,No,Fiber optic,Yes,No,Electronic check,104.59
+624b60c58c9d8bfb6ff1886c2fd605d2adeb6ea4da576068201b6c6958ce93f4,50,Male,1,No,No,23,No,Yes,No,Yes,No,Mailed check,116.93
+eb1e33e8a81b697b75855af6bfcdbcbf7cbbde9f94962ceaec1ed8af21f5a50f,15,Male,1,No,Yes,1,No,Yes,DSL,No,Yes,Credit card (automatic),100.68
+e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b,75,Male,1,Yes,No,31,Yes,Yes,DSL,Yes,Yes,Bank transfer (automatic),100.0
+c6f3ac57944a531490cd39902d0f777715fd005efac9a30622d5f5205e7f6894,23,Female,0,No,No,23,No,No,Fiber optic,Yes,Yes,Bank transfer (automatic),103.06
+86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef,12,Male,0,Yes,No,11,Yes,No,DSL,Yes,No,Electronic check,100.0
+9f14025af0065b30e47e23ebb3b491d39ae8ed17d33739e5ff3827ffb3634953,61,Female,1,No,Yes,49,No,No,Fiber optic,No,Yes,Bank transfer (automatic),111.4
+76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269,13,Female,0,Yes,No,34,No,No,DSL,No,No,Credit card (automatic),113.88
+7a61b53701befdae0eeeffaecc73f14e20b537bb0f8b91ad7c2936dc63562b25,66,Female,0,No,Yes,32,Yes,No,No,Yes,No,Bank transfer (automatic),118.69
+aea92132c4cbeb263e6ac2bf6c183b5d81737f179f21efdc5863739672f0f470,44,Female,0,Yes,No,32,Yes,No,DSL,No,Yes,Mailed check,113.31
+0b918943df0962bc7a1824c0555a389347b4febdc7cf9d1254406d80ce44e3f9,76,Male,0,Yes,Yes,60,Yes,No,DSL,Yes,Yes,Mailed check,110.38
+d59eced1ded07f84c145592f65bdf854358e009c5cd705f5215bf18697fed103,59,Female,0,No,Yes,50,No,No,Fiber optic,Yes,Yes,Electronic check,107.85
+3d914f9348c9cc0ff8a79716700b9fcd4d2f3e711608004eb8f138bcba7f14d9,45,Female,0,Yes,No,42,Yes,No,DSL,Yes,No,Credit card (automatic),100.37
+73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049,100,Female,1,Yes,Yes,11,No,Yes,DSL,Yes,Yes,Mailed check,114.4
+44cb730c420480a0477b505ae68af508fb90f96cf0ec54c6ad16949dd427f13a,33,Male,1,No,No,66,No,No,Fiber optic,No,No,Mailed check,107.18
+71ee45a3c0db9a9865f7313dd3372cf60dca6479d46261f3542eb9346e4a04d6,32,Male,0,Yes,No,64,Yes,No,No,No,Yes,Credit card (automatic),108.49
+811786ad1ae74adfdd20dd0372abaaebc6246e343aebd01da0bfc4c02bf0106c,23,Male,1,Yes,No,32,Yes,No,No,No,No,Bank transfer (automatic),115.25
+25fc0e7096fc653718202dc30b0c580b8ab87eac11a700cba03a7c021bc35b0c,79,Male,1,Yes,Yes,39,No,No,Fiber optic,Yes,No,Bank transfer (automatic),114.88
+31489056e0916d59fe3add79e63f095af3ffb81604691f21cad442a85c7be617,64,Female,1,No,Yes,42,No,No,Fiber optic,No,Yes,Electronic check,103.08
+98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71,79,Female,1,Yes,No,43,Yes,No,Fiber optic,Yes,No,Bank transfer (automatic),105.04
+0e17daca5f3e175f448bacace3bc0da47d0655a74c8dd0dc497a3afbdad95f1f,100,Male,0,No,No,28,Yes,No,Fiber optic,No,No,Credit card (automatic),115.95
+1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb,61,Female,1,Yes,Yes,12,Yes,No,Fiber optic,Yes,Yes,Mailed check,116.33
+031b4af5197ec30a926f48cf40e11a7dbc470048a21e4003b7a3c07c5dab1baa,72,Female,1,Yes,No,11,Yes,No,No,Yes,No,Bank transfer (automatic),118.45
+41cfc0d1f2d127b04555b7246d84019b4d27710a3f3aff6e7764375b1e06e05d,69,Female,0,Yes,No,45,Yes,No,No,Yes,Yes,Electronic check,106.03
+2858dcd1057d3eae7f7d5f782167e24b61153c01551450a628cee722509f6529,74,Male,0,No,No,1,No,No,Fiber optic,No,No,Bank transfer (automatic),118.13
+2fca346db656187102ce806ac732e06a62df0dbb2829e511a770556d398e1a6e,20,Male,1,Yes,Yes,34,No,Yes,DSL,No,Yes,Credit card (automatic),116.29
+02d20bbd7e394ad5999a4cebabac9619732c343a4cac99470c03e23ba2bdc2bc,54,Female,1,Yes,Yes,7,No,Yes,Fiber optic,No,Yes,Electronic check,102.35
+7688b6ef52555962d008fff894223582c484517cea7da49ee67800adc7fc8866,68,Male,1,No,Yes,25,No,No,DSL,No,No,Bank transfer (automatic),100.0
+c837649cce43f2729138e72cc315207057ac82599a59be72765a477f22d14a54,24,Male,1,Yes,No,33,Yes,No,Fiber optic,Yes,No,Electronic check,114.73
+6208ef0f7750c111548cf90b6ea1d0d0a66f6bff40dbef07cb45ec436263c7d6,38,Male,1,No,No,6,Yes,Yes,Fiber optic,No,No,Credit card (automatic),103.64
+3e1e967e9b793e908f8eae83c74dba9bcccce6a5535b4b462bd9994537bfe15c,26,Male,1,No,No,67,Yes,No,No,No,No,Mailed check,117.88
+39fa9ec190eee7b6f4dff1100d6343e10918d044c75eac8f9e9a2596173f80c9,100,Male,0,Yes,Yes,57,No,Yes,DSL,Yes,No,Credit card (automatic),112.83
+d029fa3a95e174a19934857f535eb9427d967218a36ea014b70ad704bc6c8d1c,35,Female,1,No,No,28,No,Yes,DSL,Yes,Yes,Credit card (automatic),111.67
+81b8a03f97e8787c53fe1a86bda042b6f0de9b0ec9c09357e107c99ba4d6948a,21,Male,1,Yes,No,35,Yes,Yes,No,Yes,No,Credit card (automatic),102.27
+da4ea2a5506f2693eae190d9360a1f31793c98a1adade51d93533a6f520ace1c,42,Female,0,No,No,20,Yes,Yes,No,No,Yes,Credit card (automatic),113.94
+a68b412c4282555f15546cf6e1fc42893b7e07f271557ceb021821098dd66c1b,77,Female,0,No,No,35,No,Yes,No,Yes,Yes,Mailed check,108.79
+108c995b953c8a35561103e2014cf828eb654a99e310f87fab94c2f4b7d2a04f,31,Male,0,Yes,Yes,9,No,No,No,Yes,No,Mailed check,118.17
+3ada92f28b4ceda38562ebf047c6ff05400d4c572352a1142eedfef67d21e662,67,Female,0,No,Yes,72,Yes,Yes,DSL,Yes,Yes,Electronic check,111.73
+49d180ecf56132819571bf39d9b7b342522a2ac6d23c1418d3338251bfe469c8,75,Female,1,No,No,23,Yes,No,DSL,No,Yes,Bank transfer (automatic),107.68
+a21855da08cb102d1d217c53dc5824a3a795c1c1a44e971bf01ab9da3a2acbbf,26,Female,1,No,Yes,63,No,No,Fiber optic,Yes,Yes,Mailed check,117.4
+c75cb66ae28d8ebc6eded002c28a8ba0d06d3a78c6b5cbf9b2ade051f0775ac4,43,Male,1,No,Yes,48,Yes,Yes,Fiber optic,No,Yes,Mailed check,109.26
+ff5a1ae012afa5d4c889c50ad427aaf545d31a4fac04ffc1c4d03d403ba4250a,70,Male,1,No,No,35,Yes,Yes,No,No,No,Bank transfer (automatic),116.78
+7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8,19,Female,1,Yes,No,23,Yes,No,No,Yes,Yes,Mailed check,110.88
+8722616204217eddb39e7df969e0698aed8e599ba62ed2de1ce49b03ade0fede,37,Male,1,No,Yes,22,No,Yes,No,Yes,No,Credit card (automatic),117.54
+96061e92f58e4bdcdee73df36183fe3ac64747c81c26f6c83aada8d2aabb1864,45,Male,0,Yes,No,61,No,Yes,Fiber optic,No,No,Credit card (automatic),118.8
+eb624dbe56eb6620ae62080c10a273cab73ae8eca98ab17b731446a31c79393a,64,Male,1,No,Yes,36,No,No,Fiber optic,Yes,Yes,Bank transfer (automatic),109.25
+f369cb89fc627e668987007d121ed1eacdc01db9e28f8bb26f358b7d8c4f08ac,77,Male,0,Yes,No,11,No,No,Fiber optic,Yes,No,Electronic check,111.83
+f74efabef12ea619e30b79bddef89cffa9dda494761681ca862cff2871a85980,24,Female,0,Yes,Yes,54,No,Yes,Fiber optic,No,No,Electronic check,118.95
+a88a7902cb4ef697ba0b6759c50e8c10297ff58f942243de19b984841bfe1f73,61,Female,1,No,No,12,No,No,Fiber optic,No,No,Bank transfer (automatic),119.7
+349c41201b62db851192665c504b350ff98c6b45fb62a8a2161f78b6534d8de9,78,Male,0,No,Yes,22,No,Yes,Fiber optic,Yes,Yes,Bank transfer (automatic),114.95
+98a3ab7c340e8a033e7b37b6ef9428751581760af67bbab2b9e05d4964a8874a,25,Male,1,No,Yes,29,Yes,Yes,Fiber optic,No,No,Credit card (automatic),102.56
+48449a14a4ff7d79bb7a1b6f3d488eba397c36ef25634c111b49baf362511afc,100,Female,0,Yes,Yes,16,Yes,Yes,No,Yes,No,Electronic check,116.43
+5316ca1c5ddca8e6ceccfce58f3b8540e540ee22f6180fb89492904051b3d531,52,Female,1,No,No,61,Yes,No,No,Yes,No,Mailed check,114.45
+a46e37632fa6ca51a13fe39a567b3c23b28c2f47d8af6be9bd63e030e214ba38,31,Male,0,Yes,Yes,12,Yes,No,No,Yes,Yes,Credit card (automatic),106.24
+bbb965ab0c80d6538cf2184babad2a564a010376712012bd07b0af92dcd3097d,34,Female,1,Yes,Yes,58,Yes,No,No,No,No,Bank transfer (automatic),117.55
+44c8031cb036a7350d8b9b8603af662a4b9cdbd2f96e8d5de5af435c9c35da69,53,Male,1,Yes,No,18,Yes,No,Fiber optic,Yes,Yes,Electronic check,112.56
+b4944c6ff08dc6f43da2e9c824669b7d927dd1fa976fadc7b456881f51bf5ccc,67,Male,1,No,No,48,Yes,No,DSL,Yes,Yes,Mailed check,114.15
+434c9b5ae514646bbd91b50032ca579efec8f22bf0b4aac12e65997c418e0dd6,57,Female,1,No,Yes,11,No,Yes,Fiber optic,Yes,Yes,Mailed check,100.0
+bdd2d3af3a5a1213497d4f1f7bfcda898274fe9cb5401bbc0190885664708fc2,21,Female,1,Yes,Yes,60,No,Yes,DSL,No,Yes,Credit card (automatic),100.0
+8b940be7fb78aaa6b6567dd7a3987996947460df1c668e698eb92ca77e425349,19,Male,0,Yes,No,18,Yes,Yes,No,No,Yes,Electronic check,112.41
+cd70bea023f752a0564abb6ed08d42c1440f2e33e29914e55e0be1595e24f45a,79,Male,0,No,No,8,Yes,Yes,Fiber optic,No,Yes,Electronic check,112.23
+69f59c273b6e669ac32a6dd5e1b2cb63333d8b004f9696447aee2d422ce63763,100,Female,0,Yes,No,70,No,No,No,No,No,Bank transfer (automatic),109.02
+1da51b8d8ff98f6a48f80ae79fe3ca6c26e1abb7b7d125259255d6d2b875ea08,71,Male,1,No,No,27,Yes,Yes,Fiber optic,No,Yes,Electronic check,110.06
+8241649609f88ccd2a0a5b233a07a538ec313ff6adf695aa44a969dbca39f67d,59,Female,0,Yes,No,51,Yes,No,No,Yes,No,Electronic check,110.86
+6e4001871c0cf27c7634ef1dc478408f642410fd3a444e2a88e301f5c4a35a4d,21,Male,1,No,Yes,15,No,Yes,DSL,No,No,Credit card (automatic),106.7
+e3d6c4d4599e00882384ca981ee287ed961fa5f3828e2adb5e9ea890ab0d0525,71,Female,1,Yes,No,68,Yes,No,DSL,No,Yes,Electronic check,115.77
+ad48ff99415b2f007dc35b7eb553fd1eb35ebfa2f2f308acd9488eeb86f71fa8,46,Female,0,No,Yes,11,No,No,DSL,No,No,Mailed check,104.65
+7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4,35,Female,0,Yes,Yes,24,Yes,Yes,Fiber optic,Yes,No,Credit card (automatic),103.01
+d6d824abba4afde81129c71dea75b8100e96338da5f416d2f69088f1960cb091,43,Male,1,No,Yes,51,No,Yes,DSL,No,No,Credit card (automatic),102.22
+29db0c6782dbd5000559ef4d9e953e300e2b479eed26d887ef3f92b921c06a67,61,Male,0,No,No,52,No,Yes,Fiber optic,No,No,Bank transfer (automatic),110.12
+8c1f1046219ddd216a023f792356ddf127fce372a72ec9b4cdac989ee5b0b455,51,Female,1,Yes,Yes,22,No,Yes,DSL,Yes,Yes,Electronic check,100.0

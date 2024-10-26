@@ -1,4 +1,4 @@
-# Different Types Of Models
+# Different_Types_Of_Models.py
 
 # Import necessary libraries
 import pandas as pd

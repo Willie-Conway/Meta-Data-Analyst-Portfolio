@@ -7,7 +7,7 @@
 
 Welcome to my portfolio! I have completed the Meta Data Analyst Professional Certificate, where I gained valuable skills and knowledge in data analysis, data management, and data visualization. This portfolio showcases the projects and assignments I completed during the course, highlighting my proficiency in key concepts and tools.
 
-## Table of Contents
+## 📖Table of Contents
 
 - [Course Summary](#course-summary)
 - [Skills Acquired](#skills-acquired)
@@ -20,7 +20,7 @@ Welcome to my portfolio! I have completed the Meta Data Analyst Professional Cer
 - [Conclusion](#conclusion)
 - [Contact Information](#contact-information)
 
-## Portfolio Structure
+## 📚Portfolio Structure
 ```markdown
 /MyPortfolio
 │
@@ -141,7 +141,7 @@ Welcome to my portfolio! I have completed the Meta Data Analyst Professional Cer
 
 The Meta Data Analyst Professional Certificate program provided me with comprehensive training in various aspects of data analysis. I learned about data collection, cleaning, visualization, and the importance of metadata in managing and analyzing data effectively.
 
-## Skills Acquired
+## ⚙️Skills Acquired
 
 - Data cleaning and preprocessing
 - Data visualization techniques
@@ -150,7 +150,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
 - Data storytelling and presentation
 - Proficiency in tools such as `Excel`, `Python`, and `SQL`
 
-## Projects
+## 🛠️Projects
 
 ### Project 1: Data Cleaning and Preparation
 
@@ -194,7 +194,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
 - **Technologies Used**: `PowerPoint`, `Tableau`
 - **Link**: [View Project 4](link-to-your-project)
 
-## Tools and Technologies
+## ⚙️Tools and Technologies
 
 - **Programming Languages**: `Python`, `SQL`
 - **Data Analysis Tools**: `Excel`, `Pandas`, `NumPy`

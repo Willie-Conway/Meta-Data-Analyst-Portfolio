@@ -5,7 +5,7 @@
 
 ## Overview
 
-Welcome to my portfolio! I have completed the Meta Data Analyst Professional Certificate, where I gained valuable skills and knowledge in data analysis, data management, and data visualization. This portfolio showcases the projects and assignments I completed during the course, highlighting my proficiency in key concepts and tools.
+Welcome to my portfolio! I have completed the **Meta Data Analyst Professional Certificate**, where I gained valuable skills and knowledge in data analysis, data management, and data visualization. This portfolio showcases the projects and assignments I completed during the course, highlighting my proficiency in key concepts and tools.
 
 ## 📖Table of Contents
 

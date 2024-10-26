@@ -143,13 +143,13 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
 
 <p float="left">
     <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/1%20-%20Getting%20to%20Know%20the%20Data/Screenshots/Screenshot%202024-10-11%20031407.png" width="300" />
-    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/1%20-%20Getting%20to%20Know%20the%20Data/Datasets/Capstone%20Dataset.xlsx%20-%20Capstone%20Dataset.csv" width="300" />
-    <img src="" width="300" />
-    <img src="" width="300" />
-    <img src="" width="300" />
-    <img src="" width="300" />
-    <img src="" width="300" />
-    <img src="" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/2%20-%20Understanding%20Your%20Data%20Samples/Screenshots/Screenshot%202024-10-16%20141833.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/3%20-%20Testing%20Your%20Hypothesis/Screenshots/Screenshot%202024-10-20%20205341.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/3%20-%20Testing%20Your%20Hypothesis/Screenshots/Screenshot%202024-10-20%20205359.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20113126.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20235410.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20130601.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20155442.png" width="300" />
 </p>
 
 ## ⚙️Skills Acquired

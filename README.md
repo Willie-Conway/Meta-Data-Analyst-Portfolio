@@ -150,6 +150,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
     <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20235410.png" width="300" />
     <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20130601.png" width="300" />
     <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20155442.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20204353.png" width="300" />
 </p>
 
 ## ⚙️Skills Acquired

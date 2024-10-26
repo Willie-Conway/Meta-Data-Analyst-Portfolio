@@ -6,7 +6,7 @@
 # Carlos asked Keira to help him select 
 # 5 dog food and 5 cat food products to 
 # make available to customers in the 
-# subscription product.  Imagine you are 
+# subscription product. Imagine you are 
 # in Keira’s shoes.  
 
 # Where do you think Keira might obtain 

@@ -137,9 +137,9 @@ Welcome to my portfolio! I have completed the **Meta Data Analyst Professional C
 ```
 
 
-## Course Summary
+## 📝Course Summary
 
-The Meta Data Analyst Professional Certificate program provided me with comprehensive training in various aspects of data analysis. I learned about data collection, cleaning, visualization, and the importance of metadata in managing and analyzing data effectively.
+The Meta Data Analyst Professional Certificate program provided me with comprehensive training in various aspects of data analysis. I learned about 📅data collection, 🧹cleaning, 📊visualization, and the importance of metadata in managing and analyzing data effectively.
 
 ## ⚙️Skills Acquired
 

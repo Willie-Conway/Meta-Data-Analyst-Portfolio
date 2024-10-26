@@ -141,6 +141,17 @@ Welcome to my portfolio! I have completed the **Meta Data Analyst Professional C
 
 The Meta Data Analyst Professional Certificate program provided me with comprehensive training in various aspects of data analysis. I learned about 📅data collection, 🧹cleaning, 📊visualization, and the importance of metadata in managing and analyzing data effectively.
 
+<p float="left">
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/1%20-%20Getting%20to%20Know%20the%20Data/Screenshots/Screenshot%202024-10-11%20031407.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/1%20-%20Getting%20to%20Know%20the%20Data/Datasets/Capstone%20Dataset.xlsx%20-%20Capstone%20Dataset.csv" width="300" />
+    <img src="" width="300" />
+    <img src="" width="300" />
+    <img src="" width="300" />
+    <img src="" width="300" />
+    <img src="" width="300" />
+    <img src="" width="300" />
+</p>
+
 ## ⚙️Skills Acquired
 
 - Data cleaning and preprocessing

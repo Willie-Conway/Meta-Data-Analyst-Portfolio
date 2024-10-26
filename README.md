@@ -160,7 +160,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
   - Imputing missing values
   - Normalizing data formats
 - **Technologies Used**: `Python` (`Pandas`), `Excel`
-- **Link**: [View Project 1](link-to-your-project)
+- **Link**: [Getting to Know the Data](link-to-your-project)
 
 ### Project 2: Data Visualization
 
@@ -171,7 +171,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
   - Line graphs
   - Heatmaps
 - **Technologies Used**: `Python` (`Matplotlib`, `Seaborn`), `Tableau`
-- **Link**: [View Project 2](link-to-your-project)
+- **Link**: [Understanding Your Data Samples](link-to-your-project)
 
 ### Project 3: Exploratory Data Analysis
 
@@ -181,7 +181,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
   - Correlation analysis
   - Identifying outliers
 - **Technologies Used**: `Python` (`Pandas`, `NumPy`), `Excel`
-- **Link**: [View Project 3](link-to-your-project)
+- **Link**: [Testing Your Hypothesis](link-to-your-project)
 
 ### Project 4: Data Storytelling
 
@@ -192,7 +192,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
   - Creating engaging visuals
   - Highlighting actionable insights
 - **Technologies Used**: `PowerPoint`, `Tableau`
-- **Link**: [View Project 4](link-to-your-project)
+- **Link**: [Data Modeling](link-to-your-project)
 
 ## ⚙️Tools and Technologies
 

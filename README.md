@@ -172,7 +172,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
   - Removing duplicates
   - Imputing missing values
   - Normalizing data formats
-- **Technologies Used**: `Python` (`Pandas`), `Excel`
+- **Technologies Used**: `Python` (`Pandas`), `Excel`, `SQL`
 - **Link**: [Getting to Know the Data](link-to-your-project)
 
 ### Project 2: Data Visualization
@@ -193,7 +193,7 @@ The Meta Data Analyst Professional Certificate program provided me with comprehe
   - Descriptive statistics
   - Correlation analysis
   - Identifying outliers
-- **Technologies Used**: `Python` (`Pandas`, `NumPy`), `Excel`
+- **Technologies Used**: `Python` (`Pandas`, `NumPy`), `Excel`, `SQL`
 - **Link**: [Testing Your Hypothesis](link-to-your-project)
 
 ### Project 4: Data Storytelling

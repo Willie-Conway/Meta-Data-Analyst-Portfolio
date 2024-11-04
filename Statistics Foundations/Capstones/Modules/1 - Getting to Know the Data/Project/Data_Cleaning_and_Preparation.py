@@ -3,88 +3,73 @@ import numpy as np
 import sqlite3
 
 # Load the dataset
-data = pd.read_csv(r'csv\messy_dataset.csv')
+data = pd.read_csv(r'csv/layoffs_2024.csv')
 
 # Display the initial structure of the data
 print("Initial data structure:")
 print(data.info())
 
-# Check for and remove duplicate records
+# Check for duplicate records
 initial_count = data.shape[0]
 data = data.drop_duplicates()
 final_count = data.shape[0]
 print(f"Removed {initial_count - final_count} duplicate rows.")
 
+# Check for missing values
+print("\nMissing values before cleaning:")
+print(data.isnull().sum())
+
 # Impute missing values
-# Impute numeric columns with mean
+# Impute numeric columns with the rounded mean
 numeric_columns = data.select_dtypes(include=['float64', 'int64']).columns
 for column in numeric_columns:
-    data[column].fillna(data[column].mean(), inplace=True)
+    mean_value = round(data[column].mean(), 2)  # Round to 2 decimal places
+    data[column] = data[column].fillna(mean_value)  # Replace NaNs with the rounded mean
+    print(f"Imputed missing values in {column} with rounded mean: {mean_value}")
 
-# Impute categorical columns with mode
+# Impute categorical columns with the mode
 categorical_columns = data.select_dtypes(include=['object']).columns
 for column in categorical_columns:
-    data[column].fillna(data[column].mode()[0], inplace=True)
+    mode_value = data[column].mode()[0]
+    data[column] = data[column].fillna(mode_value)  # Replace NaNs with the mode
+    print(f"Imputed missing values in {column} with mode: {mode_value}")
 
 # Normalize data formats
-# Convert text to lowercase
-data[categorical_columns] = data[categorical_columns].apply(lambda x: x.str.lower())
+# Convert text columns to lowercase for consistency
+for column in categorical_columns:
+    data[column] = data[column].str.lower()  # Convert text to lowercase
+    print(f"Converted {column} to lowercase.")
 
-# Standardize date formats (if applicable)
-if 'Date' in data.columns:
-    data['Date'] = pd.to_datetime(data['Date']).dt.strftime('%Y-%m-%d')
+# Standardize date formats (assuming there is a 'date' column)
+if 'date' in data.columns:
+    data['date'] = pd.to_datetime(data['date']).dt.strftime('%Y-%m-%d')
+    print("Standardized date format in 'date' column.")
 
-# Check for remaining missing values
+# Check for remaining missing values after cleaning
 print("\nMissing values after cleaning:")
 print(data.isnull().sum())
 
-# Save the cleaned data to a new CSV file
-data.to_csv('cleaned_dataset.csv', index=False)
-print("Cleaned dataset saved as 'cleaned_dataset.csv'.")
+# Ensure data types are appropriate for analysis
+# Use the correct column names based on your dataset
+data['total_laid_off'] = pd.to_numeric(data['total_laid_off'], errors='coerce')
+data['percentage_laid_off'] = pd.to_numeric(data['percentage_laid_off'], errors='coerce')
+data['funds_raised'] = pd.to_numeric(data['funds_raised'], errors='coerce')
 
-# Optionally, save cleaned data to SQL database
-conn = sqlite3.connect('cleaned_data.db')
-data.to_sql('cleaned_data', conn, if_exists='replace', index=False)
-print("Cleaned data has been inserted into the SQL database 'cleaned_data.db'.")
+# Final check on data types
+print("\nFinal data types:")
+print(data.dtypes)
 
-# Function to add a new record
-def add_record(new_record):
-    global data
-    # Convert the new_record dictionary to a DataFrame
-    new_record_df = pd.DataFrame([new_record])
-    # Concatenate the new DataFrame with the existing one
-    data = pd.concat([data, new_record_df], ignore_index=True)
-    print("New record added.")
+# Save the cleaned data to a new CSV file for Power BI
+cleaned_file_path = 'cleaned_layoffs_2024.csv'
+data.to_csv(cleaned_file_path, index=False)
+print(f"Cleaned dataset saved as '{cleaned_file_path}'.")
 
-# Function to update an existing record by Transaction_ID
-def update_record(transaction_id, updated_values):
-    global data
-    index = data[data['Transaction_ID'] == transaction_id].index
-    if index.empty:
-        print("Transaction ID not found.")
-    else:
-        for key, value in updated_values.items():
-            data.at[index[0], key] = value
-        print("Record updated.")
-
-# Example usage of add_record
-new_record = {
-    'Transaction_ID': 101,
-    'Product_Name': 'Oranges',
-    'Category': 'Fruit',
-    'Quantity': 4,
-    'Price': 0.4,
-    'Total_Sales': 1.6,
-    'Date': '2023-10-04'
-}
-add_record(new_record)
-
-# Example usage of update_record
-update_record(5, {'Quantity': 12, 'Total_Sales': 1.2})  # Updating the record with Transaction_ID 5
-
-# Save the updated data to CSV
-data.to_csv('updated_cleaned_dataset.csv', index=False)
-print("Updated dataset saved as 'updated_cleaned_dataset.csv'.")
+# Optional: Save cleaned data to SQL database
+# Create a connection to the SQLite database
+conn = sqlite3.connect('cleaned_layoffs.db')
+data.to_sql('cleaned_layoffs', conn, if_exists='replace', index=False)
+print("Cleaned data has been inserted into the SQL database 'cleaned_layoffs.db'.")
 
 # Close the database connection
 conn.close()
+print("Database connection closed.")

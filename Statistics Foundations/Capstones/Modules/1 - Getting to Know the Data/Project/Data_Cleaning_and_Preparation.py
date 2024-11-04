@@ -3,7 +3,7 @@ import numpy as np
 import sqlite3
 
 # Load the dataset
-data = pd.read_csv('messy_dataset.csv')
+data = pd.read_csv(r'csv\messy_dataset.csv')
 
 # Display the initial structure of the data
 print("Initial data structure:")
@@ -50,7 +50,10 @@ print("Cleaned data has been inserted into the SQL database 'cleaned_data.db'.")
 # Function to add a new record
 def add_record(new_record):
     global data
-    data = data.append(new_record, ignore_index=True)
+    # Convert the new_record dictionary to a DataFrame
+    new_record_df = pd.DataFrame([new_record])
+    # Concatenate the new DataFrame with the existing one
+    data = pd.concat([data, new_record_df], ignore_index=True)
     print("New record added.")
 
 # Function to update an existing record by Transaction_ID

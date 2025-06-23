@@ -1,6 +1,6 @@
 # Meta Data Analyst Professional Certificate Portfolio
 
-![Meta Data Analyst](https://tinypic.host/images/2024/10/25/Meta-Data-Analyst.png)
+![Meta Data Analyst](https://images.credly.com/size/340x340/images/4dd82f2c-e7eb-4b64-bb24-f4351f596220/image.png)
 
 
 ## Overview

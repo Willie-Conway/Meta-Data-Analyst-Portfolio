@@ -25,6 +25,13 @@ This repository showcases my journey through the **Meta Data Analyst Professiona
     <img src="https://github.com/Willie-Conway/Meta-Data-Analyst/blob/main/Statistics%20Foundations/Capstones/Modules/4%20-%20Data%20Modeling/Screenshots/Screenshot%202024-10-24%20130601.png" width="300" />
 </p>
 
+<p float="left">
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/3cff9219e2346e0eed2e7d5f791f774ea1c8ec7c/Statistics%20Foundations/Screenshots/Screenshot%202024-10-11%20231155.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/3cff9219e2346e0eed2e7d5f791f774ea1c8ec7c/Statistics%20Foundations/Screenshots/Screenshot%202024-10-11%20232721.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/3cff9219e2346e0eed2e7d5f791f774ea1c8ec7c/Statistics%20Foundations/Jupyter%20Nootebook/Images/Facebook%20conversion.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/3cff9219e2346e0eed2e7d5f791f774ea1c8ec7c/Statistics%20Foundations/Jupyter%20Nootebook/Images/Q%20-%20plot%20for%20normality.png" width="300" />
+</p>
+
 ## 📚 Course Portfolio Structure
 
 ### 1. 📊 **Introduction to Data Analytics**

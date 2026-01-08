@@ -32,6 +32,20 @@ This repository showcases my journey through the **Meta Data Analyst Professiona
     <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/3cff9219e2346e0eed2e7d5f791f774ea1c8ec7c/Statistics%20Foundations/Jupyter%20Nootebook/Images/Q%20-%20plot%20for%20normality.png" width="300" />
 </p>
 
+<p float="left">
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/K-Means%20Clustering%20of%20Clicks.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/K-Means%20Clustering.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/Linear%20Regression%20Home%20Prices.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/Pie%20Chart%20of%20Top%2010%20%20Home%20Prices.png" width="300" />
+</p>
+
+<p float="left">
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/Price%20Distribution%20Histogram.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/Scatter%20Plot%20Linear%20Regression.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/Scatter%20Plot%20of%20Ad%20Clicks.png" width="300" />
+    <img src="https://github.com/Willie-Conway/Meta-Data-Analyst-Portfolio/blob/d8ff892965197ccbace666db9d85c213bc3bedf2/Statistics%20Foundations/Jupyter%20Nootebook/Images/Simple%20Linear%20Regression.png" width="300" />
+</p>
+
 ## 📚 Course Portfolio Structure
 
 ### 1. 📊 **Introduction to Data Analytics**

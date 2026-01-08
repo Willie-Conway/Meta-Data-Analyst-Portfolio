@@ -276,7 +276,7 @@ This portfolio demonstrates mastery in:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🙏🏿 Acknowledgments
 
 - Meta for the comprehensive data analytics curriculum
 - Coursera for providing the learning platform

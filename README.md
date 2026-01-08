@@ -145,22 +145,49 @@ This repository showcases my journey through the **Meta Data Analyst Professiona
   4. 📊 **Visualization Development** - Dashboard and report creation
   5. 🎤 **Business Presentation** - Stakeholder communication
 
-## 🛠️ Technical Skills Demonstrated
+## 🛠️ **Technical Skills Demonstrated**
 
-### Programming & Analysis
-- **Python**: Pandas, NumPy, Matplotlib, Seaborn, Statistical Analysis
-- **SQL**: Complex queries, data aggregation, performance optimization
-- **Statistics**: Hypothesis testing, regression analysis, experimental design
+### **Programming & Data Analysis**
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
-### Visualization & Reporting
-- **Tableau**: Interactive dashboards, advanced charting, business intelligence
-- **Excel**: PivotTables, advanced formulas, data modeling
-- **Python Visualization**: Matplotlib, Seaborn, Plotly integration
+### **Statistical Analysis & Modeling**
+![Statistics](https://img.shields.io/badge/Statistics-FF6B6B?style=for-the-badge&logo=gnu&logoColor=white)
+![Hypothesis Testing](https://img.shields.io/badge/Hypothesis%20Testing-3498DB?style=for-the-badge)
+![Regression Analysis](https://img.shields.io/badge/Regression%20Analysis-27AE60?style=for-the-badge)
+![A/B Testing](https://img.shields.io/badge/A/B%20Testing-9B59B6?style=for-the-badge)
+![Data Modeling](https://img.shields.io/badge/Data%20Modeling-00B050?style=for-the-badge)
 
-### Data Management
-- **Data Governance**: Security, compliance, quality assurance
-- **Database Management**: Schema design, optimization, maintenance
-- **ETL Processes**: Extraction, transformation, loading workflows
+### **Data Visualization & BI**
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
+![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+![Data Visualization](https://img.shields.io/badge/Data%20Visualization-FF6384?style=for-the-badge)
+![Business Intelligence](https://img.shields.io/badge/Business%20Intelligence-FF9E0F?style=for-the-badge)
+![Dashboard Design](https://img.shields.io/badge/Dashboard%20Design-8E44AD?style=for-the-badge)
+
+### **Data Management & Tools**
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![Database Management](https://img.shields.io/badge/Database%20Management-336791?style=for-the-badge)
+![Data Governance](https://img.shields.io/badge/Data%20Governance-2C3E50?style=for-the-badge)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+
+### **Python Data Science Stack**
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-5A9BD5?style=for-the-badge&logo=python&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-01D277?style=for-the-badge)
+![Data Wrangling](https://img.shields.io/badge/Data%20Wrangling-FF6B35?style=for-the-badge)
+![ETL Processes](https://img.shields.io/badge/ETL%20Processes-4A90E2?style=for-the-badge)
+
+### **Database & Storage Technologies**
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)
+![Data Storage](https://img.shields.io/badge/Data%20Storage-FF9900?style=for-the-badge)
+![Big Data](https://img.shields.io/badge/Big%20Data-F39C12?style=for-the-badge)
 
 ## 📁 Repository Structure
 
@@ -249,23 +276,6 @@ jupyter notebook "Data Modeling Analysis.ipynb"
 ✅ **Interactive Tableau Dashboards** with professional design  
 ✅ **End-to-End Python Analytics** from data ingestion to visualization  
 ✅ **Comprehensive Data Management** including security and governance  
-
-## 🛠️ Tools & Technologies Mastered
-
-### Core Technologies
-- **Programming**: Python (Advanced), SQL (Advanced), R (Basic)
-- **Databases**: SQLite, MySQL, PostgreSQL fundamentals
-- **Statistical Analysis**: Hypothesis testing, regression, A/B testing
-
-### Visualization Tools
-- **Business Intelligence**: Tableau (Advanced), Excel (Advanced)
-- **Python Libraries**: Matplotlib, Seaborn, Plotly
-- **Dashboard Creation**: Interactive reporting and KPI tracking
-
-### Data Management
-- **Governance**: Security frameworks, compliance standards
-- **Storage**: Database design, optimization strategies
-- **Quality**: Data validation, cleaning pipelines
 
 ## 🏆 Certifications
 

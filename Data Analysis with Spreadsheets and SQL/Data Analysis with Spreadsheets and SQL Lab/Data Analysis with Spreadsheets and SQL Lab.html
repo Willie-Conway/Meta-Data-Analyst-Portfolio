@@ -1,0 +1,3715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis with Spreadsheets and SQL Lab</title>
+    <style>
+        :root {
+            --spreadsheet-color: #3498db;
+            --sql-color: #2ecc71;
+            --osemn-color: #9b59b6;
+            --charts-color: #e74c3c;
+            --practice-color: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .data-lab {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="40" y="10" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="70" y="10" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="10" y="40" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="40" y="40" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="70" y="40" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="10" y="70" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="40" y="70" width="20" height="20" fill="rgba(255,255,255,0.1)"/><rect x="70" y="70" width="20" height="20" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 2px solid #dee2e6;
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 15px 30px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-btn.active {
+            color: white;
+            border-color: transparent;
+        }
+        
+        .nav-btn[data-module="spreadsheets"] { border-color: var(--spreadsheet-color); }
+        .nav-btn[data-module="spreadsheets"].active { background: var(--spreadsheet-color); }
+        
+        .nav-btn[data-module="sql"] { border-color: var(--sql-color); }
+        .nav-btn[data-module="sql"].active { background: var(--sql-color); }
+        
+        .nav-btn[data-module="osemn"] { border-color: var(--osemn-color); }
+        .nav-btn[data-module="osemn"].active { background: var(--osemn-color); }
+        
+        .nav-btn[data-module="charts"] { border-color: var(--charts-color); }
+        .nav-btn[data-module="charts"].active { background: var(--charts-color); }
+        
+        .nav-btn[data-module="practice"] { border-color: var(--practice-color); }
+        .nav-btn[data-module="practice"].active { background: var(--practice-color); }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            min-height: 900px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .module-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #95a5a6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4a6572;
+        }
+        
+        .lesson-btn {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+            color: white;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .lesson-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .lesson-btn.active {
+            background: rgba(52, 152, 219, 0.3);
+            border-color: #3498db;
+            color: #3498db;
+            font-weight: 600;
+        }
+        
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 40px;
+            background: #f8f9fa;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .module-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .module-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Content Styling */
+        .content-header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 6px solid;
+        }
+        
+        .content-header.spreadsheets { border-color: var(--spreadsheet-color); }
+        .content-header.sql { border-color: var(--sql-color); }
+        .content-header.osemn { border-color: var(--osemn-color); }
+        .content-header.charts { border-color: var(--charts-color); }
+        .content-header.practice { border-color: var(--practice-color); }
+        
+        .content-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .content-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Interactive Examples */
+        .interactive-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .example-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .example-description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        /* Data Input */
+        .data-input-section {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .input-group {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .data-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Consolas', monospace;
+            background: #f8f9fa;
+        }
+        
+        .data-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .calculate-btn {
+            padding: 15px 40px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .calculate-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        /* Results Display */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .result-value {
+            font-size: 24px;
+            font-weight: 800;
+            margin: 15px 0;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .result-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Chart Containers */
+        .chart-container {
+            height: 400px;
+            background: white;
+            border-radius: 12px;
+            margin: 30px 0;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .chart-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #ddd;
+        }
+        
+        /* Formula Cards */
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .formula-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .formula-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .formula {
+            font-family: 'Consolas', monospace;
+            font-size: 18px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: left;
+            color: #e74c3c;
+            overflow-x: auto;
+        }
+        
+        .formula-explanation {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        /* Practice Area */
+        .practice-question {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 6px solid var(--practice-color);
+        }
+        
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .option-btn {
+            padding: 15px;
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 16px;
+            transition: all 0.2s;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .option-btn:hover {
+            background: #e9ecef;
+        }
+        
+        .option-btn.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        
+        .option-btn.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+        
+        /* Feedback */
+        .feedback {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+            animation: slideIn 0.3s;
+        }
+        
+        .feedback.show {
+            display: block;
+        }
+        
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* SQL Editor */
+        .sql-editor {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .sql-query {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+        
+        .sql-keyword {
+            color: #569cd6;
+        }
+        
+        .sql-function {
+            color: #dcdcaa;
+        }
+        
+        .sql-string {
+            color: #ce9178;
+        }
+        
+        /* Spreadsheet Simulator */
+        .spreadsheet-grid {
+            display: grid;
+            grid-template-columns: 50px repeat(6, 1fr);
+            gap: 1px;
+            background: #ddd;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .spreadsheet-cell {
+            background: white;
+            padding: 10px;
+            min-height: 50px;
+            border: 1px solid #eee;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+        }
+        
+        .spreadsheet-header {
+            background: #2c3e50;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .spreadsheet-row-header {
+            background: #34495e;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Pivot Table */
+        .pivot-table {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2px;
+            background: #f0f0f0;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .pivot-cell {
+            background: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pivot-header {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .pivot-total {
+            background: #2ecc71;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .data-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-btn {
+                min-width: 150px;
+            }
+            
+            .pivot-table {
+                grid-template-columns: repeat(3, 1fr);
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content-area, .sidebar {
+                padding: 20px;
+            }
+            
+            .content-title {
+                font-size: 28px;
+            }
+            
+            .data-input-section {
+                flex-direction: column;
+            }
+            
+            .input-group {
+                min-width: 100%;
+            }
+            
+            .spreadsheet-grid {
+                grid-template-columns: 40px repeat(4, 1fr);
+                overflow-x: auto;
+            }
+            
+            .pivot-table {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="data-lab">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1 class="title">Data Analysis with Spreadsheets and SQL Lab</h1>
+                <p class="subtitle">Master data analysis techniques from data cleaning to SQL queries and visualization. Based on Meta's Data Analytics curriculum.</p>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <button class="nav-btn active" data-module="spreadsheets" onclick="showModule('spreadsheets')">
+                📊 Spreadsheet Analysis
+            </button>
+            <button class="nav-btn" data-module="sql" onclick="showModule('sql')">
+                🗃️ SQL Queries
+            </button>
+            <button class="nav-btn" data-module="osemn" onclick="showModule('osemn')">
+                🔄 OSEMN Framework
+            </button>
+            <button class="nav-btn" data-module="charts" onclick="showModule('charts')">
+                📈 Data Visualization
+            </button>
+            <button class="nav-btn" data-module="practice" onclick="showModule('practice')">
+                🎯 Practice Arena
+            </button>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Spreadsheets Lessons -->
+                <div class="module-section" id="spreadsheets-section">
+                    <div class="section-title">Spreadsheet Analysis</div>
+                    <button class="lesson-btn active" data-lesson="cleaning" onclick="showLesson('cleaning')">
+                        <span>🧹</span> Data Cleaning
+                    </button>
+                    <button class="lesson-btn" data-lesson="functions" onclick="showLesson('functions')">
+                        <span>🧮</span> Functions & Formulas
+                    </button>
+                    <button class="lesson-btn" data-lesson="filtering" onclick="showLesson('filtering')">
+                        <span>🔍</span> Filtering & Sorting
+                    </button>
+                    <button class="lesson-btn" data-lesson="pivot" onclick="showLesson('pivot')">
+                        <span>📊</span> Pivot Tables
+                    </button>
+                </div>
+                
+                <!-- SQL Lessons -->
+                <div class="module-section" id="sql-section">
+                    <div class="section-title">SQL Queries</div>
+                    <button class="lesson-btn" data-lesson="select" onclick="showLesson('select')">
+                        <span>🎯</span> SELECT Statements
+                    </button>
+                    <button class="lesson-btn" data-lesson="where" onclick="showLesson('where')">
+                        <span>🔍</span> WHERE Clauses
+                    </button>
+                    <button class="lesson-btn" data-lesson="aggregate" onclick="showLesson('aggregate')">
+                        <span>📈</span> Aggregate Functions
+                    </button>
+                    <button class="lesson-btn" data-lesson="groupby" onclick="showLesson('groupby')">
+                        <span>👥</span> GROUP BY
+                    </button>
+                </div>
+                
+                <!-- OSEMN Lessons -->
+                <div class="module-section" id="osemn-section">
+                    <div class="section-title">OSEMN Framework</div>
+                    <button class="lesson-btn" data-lesson="obtain" onclick="showLesson('obtain')">
+                        <span>📥</span> Obtain Data
+                    </button>
+                    <button class="lesson-btn" data-lesson="scrub" onclick="showLesson('scrub')">
+                        <span>🧹</span> Scrub/Clean
+                    </button>
+                    <button class="lesson-btn" data-lesson="explore" onclick="showLesson('explore')">
+                        <span>🔍</span> Explore Data
+                    </button>
+                    <button class="lesson-btn" data-lesson="model" onclick="showLesson('model')">
+                        <span>🧠</span> Model Data
+                    </button>
+                    <button class="lesson-btn" data-lesson="interpret" onclick="showLesson('interpret')">
+                        <span>💡</span> Interpret Results
+                    </button>
+                </div>
+                
+                <!-- Charts Lessons -->
+                <div class="module-section" id="charts-section">
+                    <div class="section-title">Data Visualization</div>
+                    <button class="lesson-btn" data-lesson="barcharts" onclick="showLesson('barcharts')">
+                        <span>📊</span> Bar Charts
+                    </button>
+                    <button class="lesson-btn" data-lesson="linecharts" onclick="showLesson('linecharts')">
+                        <span>📈</span> Line Charts
+                    </button>
+                    <button class="lesson-btn" data-lesson="scatterplots" onclick="showLesson('scatterplots')">
+                        <span>⚫</span> Scatter Plots
+                    </button>
+                    <button class="lesson-btn" data-lesson="piecharts" onclick="showLesson('piecharts')">
+                        <span>🥧</span> Pie Charts
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Spreadsheets Module -->
+                <div class="module-content active" id="module-spreadsheets">
+                    <div class="content-header spreadsheets">
+                        <h2 class="content-title">Spreadsheet Data Analysis</h2>
+                        <p class="content-description">Master spreadsheet techniques for data cleaning, analysis, and visualization using Google Sheets/Excel functionality.</p>
+                    </div>
+                    
+                    <!-- Data Cleaning Section -->
+                    <div class="interactive-section" id="cleaning-section">
+                        <div class="example-title">
+                            <span>🧹</span>
+                            Data Cleaning Simulator
+                        </div>
+                        <p class="example-description">Practice cleaning messy data by removing duplicates, handling missing values, and fixing formatting issues.</p>
+                        
+                        <div class="spreadsheet-grid">
+                            <!-- Row Headers -->
+                            <div class="spreadsheet-cell spreadsheet-row-header"></div>
+                            <div class="spreadsheet-cell spreadsheet-header">Customer ID</div>
+                            <div class="spreadsheet-cell spreadsheet-header">Name</div>
+                            <div class="spreadsheet-cell spreadsheet-header">Email</div>
+                            <div class="spreadsheet-cell spreadsheet-header">Purchase Date</div>
+                            <div class="spreadsheet-cell spreadsheet-header">Amount</div>
+                            <div class="spreadsheet-cell spreadsheet-header">Status</div>
+                            
+                            <!-- Data Rows -->
+                            <div class="spreadsheet-cell spreadsheet-row-header">1</div>
+                            <div class="spreadsheet-cell">C001</div>
+                            <div class="spreadsheet-cell">John Smith</div>
+                            <div class="spreadsheet-cell">john@email.com</div>
+                            <div class="spreadsheet-cell">2024-01-15</div>
+                            <div class="spreadsheet-cell">$150.00</div>
+                            <div class="spreadsheet-cell">Active</div>
+                            
+                            <div class="spreadsheet-cell spreadsheet-row-header">2</div>
+                            <div class="spreadsheet-cell">C002</div>
+                            <div class="spreadsheet-cell">Jane Doe</div>
+                            <div class="spreadsheet-cell">jane@email.com</div>
+                            <div class="spreadsheet-cell">2024/01/16</div>
+                            <div class="spreadsheet-cell">$225.50</div>
+                            <div class="spreadsheet-cell">Active</div>
+                            
+                            <div class="spreadsheet-cell spreadsheet-row-header">3</div>
+                            <div class="spreadsheet-cell">C001</div>
+                            <div class="spreadsheet-cell">John Smith</div>
+                            <div class="spreadsheet-cell">john@email.com</div>
+                            <div class="spreadsheet-cell">2024-01-15</div>
+                            <div class="spreadsheet-cell">$150.00</div>
+                            <div class="spreadsheet-cell">Active</div>
+                            
+                            <div class="spreadsheet-cell spreadsheet-row-header">4</div>
+                            <div class="spreadsheet-cell">C003</div>
+                            <div class="spreadsheet-cell"></div>
+                            <div class="spreadsheet-cell">bob@email.com</div>
+                            <div class="spreadsheet-cell">Jan 17, 2024</div>
+                            <div class="spreadsheet-cell">$300</div>
+                            <div class="spreadsheet-cell">Inactive</div>
+                            
+                            <div class="spreadsheet-cell spreadsheet-row-header">5</div>
+                            <div class="spreadsheet-cell">C004</div>
+                            <div class="spreadsheet-cell">Alice Johnson</div>
+                            <div class="spreadsheet-cell">alice.j@email.com</div>
+                            <div class="spreadsheet-cell">2024-01-18</div>
+                            <div class="spreadsheet-cell">$175.75</div>
+                            <div class="spreadsheet-cell">active</div>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Cleaning Actions:</label>
+                                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="removeDuplicates" checked> Remove duplicate rows
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="standardizeDates" checked> Standardize date format
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="formatCurrency" checked> Format currency consistently
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="fillMissing" checked> Fill missing values
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="standardizeStatus" checked> Standardize text case
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="calculate-btn" onclick="cleanData()">
+                            <span>🧹</span> Clean Data
+                        </button>
+                        
+                        <div class="results-grid" id="cleaningResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Common Data Cleaning Tasks:</div>
+                            <div class="formula-explanation">
+                                • <strong>Remove Duplicates:</strong> =UNIQUE(range) or Data → Data cleanup → Remove duplicates<br>
+                                • <strong>Trim Whitespace:</strong> =TRIM(cell)<br>
+                                • <strong>Standardize Dates:</strong> =DATEVALUE(cell) or Format → Number → Date<br>
+                                • <strong>Handle Missing Values:</strong> =IF(ISBLANK(cell), "Unknown", cell)<br>
+                                • <strong>Format Currency:</strong> Format → Number → Currency<br>
+                                • <strong>Standardize Text:</strong> =UPPER(cell), =LOWER(cell), or =PROPER(cell)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Functions & Formulas Section -->
+                    <div class="interactive-section" id="functions-section">
+                        <div class="example-title">
+                            <span>🧮</span>
+                            Spreadsheet Functions Explorer
+                        </div>
+                        <p class="example-description">Explore common spreadsheet functions for data analysis. Enter numbers to see calculations.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Enter numbers (comma separated):</label>
+                                <input type="text" class="data-input" id="functionInput" 
+                                       value="45, 67, 89, 34, 56, 78, 92, 23, 45, 67" 
+                                       placeholder="e.g., 45, 67, 89, 34, 56">
+                            </div>
+                            <button class="calculate-btn" onclick="calculateFunctions()">
+                                <span>📊</span> Calculate Functions
+                            </button>
+                        </div>
+                        
+                        <div class="results-grid" id="functionResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <div class="formula-grid">
+                            <div class="formula-card">
+                                <div class="formula-title">SUM Function</div>
+                                <div class="formula">=SUM(A1:A10)</div>
+                                <div class="formula-explanation">
+                                    Adds all numbers in a range of cells. Essential for calculating totals.
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">AVERAGE Function</div>
+                                <div class="formula">=AVERAGE(A1:A10)</div>
+                                <div class="formula-explanation">
+                                    Calculates the arithmetic mean of numbers in a range. Great for finding central tendency.
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">COUNT Function</div>
+                                <div class="formula">=COUNT(A1:A10)</div>
+                                <div class="formula-explanation">
+                                    Counts the number of cells that contain numbers. Useful for data validation.
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">VLOOKUP Function</div>
+                                <div class="formula">=VLOOKUP(value, range, column, FALSE)</div>
+                                <div class="formula-explanation">
+                                    Searches for a value in the first column of a range and returns a value in the same row from a specified column.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtering & Sorting Section -->
+                    <div class="interactive-section" id="filtering-section">
+                        <div class="example-title">
+                            <span>🔍</span>
+                            Filtering & Sorting Practice
+                        </div>
+                        <p class="example-description">Practice filtering and sorting data to find specific information.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Filter by Status:</label>
+                                <select class="data-input" id="filterStatus" onchange="applyFilter()">
+                                    <option value="all">All Statuses</option>
+                                    <option value="active">Active Only</option>
+                                    <option value="inactive">Inactive Only</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Sort by:</label>
+                                <select class="data-input" id="sortColumn" onchange="applySort()">
+                                    <option value="name">Name (A-Z)</option>
+                                    <option value="amount">Amount (High-Low)</option>
+                                    <option value="date">Date (Newest-Oldest)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="filteringChart"></canvas>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Filtering & Sorting Tips:</div>
+                            <div class="formula-explanation">
+                                • <strong>Filtering:</strong> Use Data → Filter to create dropdown filters for columns<br>
+                                • <strong>Advanced Filter:</strong> Use Data → Advanced Filter for complex criteria<br>
+                                • <strong>Sorting:</strong> Use Data → Sort or click column headers<br>
+                                • <strong>Custom Sort:</strong> Sort by multiple columns for hierarchical organization<br>
+                                • <strong>Filter Views:</strong> Save different filter configurations for different analyses
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pivot Tables Section -->
+                    <div class="interactive-section" id="pivot-section">
+                        <div class="example-title">
+                            <span>📊</span>
+                            Pivot Table Builder
+                        </div>
+                        <p class="example-description">Create a pivot table to summarize and analyze data from different perspectives.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Rows (Group by):</label>
+                                <select class="data-input" id="pivotRows" onchange="updatePivotTable()">
+                                    <option value="category">Product Category</option>
+                                    <option value="status">Customer Status</option>
+                                    <option value="month">Month</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Values (Calculate):</label>
+                                <select class="data-input" id="pivotValues" onchange="updatePivotTable()">
+                                    <option value="sum">Sum of Amount</option>
+                                    <option value="count">Count of Orders</option>
+                                    <option value="average">Average Amount</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="calculate-btn" onclick="updatePivotTable()">
+                            <span>📊</span> Update Pivot Table
+                        </button>
+                        
+                        <div class="pivot-table" id="pivotTable">
+                            <!-- Pivot table will be generated here -->
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="pivotChart"></canvas>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Pivot Table Benefits:</div>
+                            <div class="formula-explanation">
+                                1. <strong>Summarize Data:</strong> Quickly aggregate large datasets<br>
+                                2. <strong>Compare Metrics:</strong> Analyze relationships between different variables<br>
+                                3. <strong>Spot Trends:</strong> Identify patterns over time or across categories<br>
+                                4. <strong>Drill Down:</strong> Click on totals to see underlying data<br>
+                                5. <strong>Dynamic Updates:</strong> Refresh when source data changes<br>
+                                6. <strong>Multiple Views:</strong> Create different reports from the same data
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SQL Module -->
+                <div class="module-content" id="module-sql">
+                    <div class="content-header sql">
+                        <h2 class="content-title">SQL Query Mastery</h2>
+                        <p class="content-description">Learn SQL syntax for data extraction, filtering, and aggregation using interactive examples.</p>
+                    </div>
+                    
+                    <!-- SELECT Statements -->
+                    <div class="interactive-section" id="select-section">
+                        <div class="example-title">
+                            <span>🎯</span>
+                            SELECT Statement Practice
+                        </div>
+                        <p class="example-description">Practice writing SELECT statements to retrieve data from the sample database.</p>
+                        
+                        <div class="sql-editor">
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> * <span class="sql-keyword">FROM</span> customers;
+                            </div>
+                            
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> customer_id, first_name, last_name, email <span class="sql-keyword">FROM</span> customers;
+                            </div>
+                            
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> first_name <span class="sql-keyword">AS</span> "First Name", 
+                                last_name <span class="sql-keyword">AS</span> "Last Name" <span class="sql-keyword">FROM</span> customers;
+                            </div>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Try your own SELECT statement:</label>
+                                <input type="text" class="data-input" id="sqlSelect" 
+                                       value="SELECT product_name, price FROM products" 
+                                       placeholder="Enter SQL SELECT statement">
+                            </div>
+                            <button class="calculate-btn" onclick="runSQLQuery()">
+                                <span>🚀</span> Run Query
+                            </button>
+                        </div>
+                        
+                        <table class="data-table" id="sqlResults">
+                            <thead>
+                                <tr>
+                                    <th>Customer ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Join Date</th>
+                                    <th>City</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Results will appear here -->
+                            </tbody>
+                        </table>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">SELECT Statement Syntax:</div>
+                            <div class="formula">
+                                SELECT column1, column2, ...<br>
+                                FROM table_name<br>
+                                WHERE condition<br>
+                                ORDER BY column1 [ASC|DESC]<br>
+                                LIMIT number;
+                            </div>
+                            <div class="formula-explanation">
+                                • Use * to select all columns<br>
+                                • Use AS to rename columns (aliases)<br>
+                                • Use DISTINCT to get unique values<br>
+                                • Use TOP or LIMIT to restrict results
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- WHERE Clauses -->
+                    <div class="interactive-section" id="where-section">
+                        <div class="example-title">
+                            <span>🔍</span>
+                            WHERE Clause Practice
+                        </div>
+                        <p class="example-description">Filter data using WHERE clauses with conditions and logical operators.</p>
+                        
+                        <div class="sql-editor">
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> * <span class="sql-keyword">FROM</span> orders 
+                                <span class="sql-keyword">WHERE</span> total_amount > 100;
+                            </div>
+                            
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> * <span class="sql-keyword">FROM</span> customers 
+                                <span class="sql-keyword">WHERE</span> city = 'New York' <span class="sql-keyword">AND</span> status = 'Active';
+                            </div>
+                            
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> * <span class="sql-keyword">FROM</span> products 
+                                <span class="sql-keyword">WHERE</span> category <span class="sql-keyword">IN</span> ('Electronics', 'Books');
+                            </div>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Column to filter:</label>
+                                <select class="data-input" id="whereColumn">
+                                    <option value="price">Price</option>
+                                    <option value="category">Category</option>
+                                    <option value="quantity">Quantity</option>
+                                    <option value="status">Status</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Condition:</label>
+                                <select class="data-input" id="whereCondition">
+                                    <option value="greater">Greater than</option>
+                                    <option value="less">Less than</option>
+                                    <option value="equal">Equals</option>
+                                    <option value="notequal">Not equal to</option>
+                                    <option value="contains">Contains</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Value:</label>
+                                <input type="text" class="data-input" id="whereValue" value="50" onchange="runWhereQuery()">
+                            </div>
+                        </div>
+                        
+                        <button class="calculate-btn" onclick="runWhereQuery()">
+                            <span>🔍</span> Apply WHERE Filter
+                        </button>
+                        
+                        <div class="results-grid" id="whereResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">WHERE Clause Operators:</div>
+                            <div class="formula-explanation">
+                                • <strong>=</strong> : Equal to<br>
+                                • <strong>!= or <> </strong> : Not equal to<br>
+                                • <strong>></strong> : Greater than<br>
+                                • <strong><</strong> : Less than<br>
+                                • <strong>>=</strong> : Greater than or equal to<br>
+                                • <strong><=</strong> : Less than or equal to<br>
+                                • <strong>IN</strong> : Match any value in a list<br>
+                                • <strong>LIKE</strong> : Pattern matching with wildcards<br>
+                                • <strong>BETWEEN</strong> : Between a range of values<br>
+                                • <strong>IS NULL</strong> : Check for null values
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Aggregate Functions -->
+                    <div class="interactive-section" id="aggregate-section">
+                        <div class="example-title">
+                            <span>📈</span>
+                            Aggregate Functions Practice
+                        </div>
+                        <p class="example-description">Use aggregate functions to calculate summary statistics from your data.</p>
+                        
+                        <div class="sql-editor">
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> 
+                                <span class="sql-function">COUNT</span>(*) <span class="sql-keyword">AS</span> total_orders,
+                                <span class="sql-function">SUM</span>(total_amount) <span class="sql-keyword">AS</span> total_revenue,
+                                <span class="sql-function">AVG</span>(total_amount) <span class="sql-keyword">AS</span> avg_order_value,
+                                <span class="sql-function">MIN</span>(total_amount) <span class="sql-keyword">AS</span> min_order,
+                                <span class="sql-function">MAX</span>(total_amount) <span class="sql-keyword">AS</span> max_order
+                                <span class="sql-keyword">FROM</span> orders;
+                            </div>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Select aggregate function:</label>
+                                <select class="data-input" id="aggregateFunction" onchange="updateAggregateQuery()">
+                                    <option value="count">COUNT</option>
+                                    <option value="sum">SUM</option>
+                                    <option value="avg">AVERAGE</option>
+                                    <option value="min">MIN</option>
+                                    <option value="max">MAX</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="sql-editor">
+                            <div class="sql-query" id="aggregateQueryDisplay">
+                                <!-- Dynamic query will appear here -->
+                            </div>
+                        </div>
+                        
+                        <button class="calculate-btn" onclick="runAggregateQuery()">
+                            <span>📊</span> Run Aggregate Query
+                        </button>
+                        
+                        <div class="results-grid" id="aggregateResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Aggregate Function Notes:</div>
+                            <div class="formula-explanation">
+                                • <strong>COUNT(*)</strong> counts all rows including NULLs<br>
+                                • <strong>COUNT(column)</strong> counts non-NULL values only<br>
+                                • <strong>SUM</strong> ignores NULL values<br>
+                                • <strong>AVG</strong> calculates (SUM/COUNT) ignoring NULLs<br>
+                                • <strong>MIN/MAX</strong> work with numbers, dates, and text<br>
+                                • Use <strong>DISTINCT</strong> with aggregates for unique values
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GROUP BY Section -->
+                    <div class="interactive-section" id="groupby-section">
+                        <div class="example-title">
+                            <span>👥</span>
+                            GROUP BY Practice
+                        </div>
+                        <p class="example-description">Group data by categories and calculate aggregates for each group.</p>
+                        
+                        <div class="sql-editor">
+                            <div class="sql-query">
+                                <span class="sql-keyword">SELECT</span> category, 
+                                <span class="sql-function">COUNT</span>(*) <span class="sql-keyword">AS</span> product_count,
+                                <span class="sql-function">AVG</span>(price) <span class="sql-keyword">AS</span> avg_price,
+                                <span class="sql-function">SUM</span>(quantity) <span class="sql-keyword">AS</span> total_quantity
+                                <span class="sql-keyword">FROM</span> products
+                                <span class="sql-keyword">GROUP BY</span> category
+                                <span class="sql-keyword">ORDER BY</span> product_count <span class="sql-keyword">DESC</span>;
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="groupbyChart"></canvas>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Group by Column:</label>
+                                <select class="data-input" id="groupByColumn" onchange="updateGroupByChart()">
+                                    <option value="category">Product Category</option>
+                                    <option value="status">Customer Status</option>
+                                    <option value="city">City</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Aggregate Function:</label>
+                                <select class="data-input" id="groupByAggregate" onchange="updateGroupByChart()">
+                                    <option value="count">Count</option>
+                                    <option value="sum">Sum</option>
+                                    <option value="avg">Average</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="calculate-btn" onclick="updateGroupByChart()">
+                            <span>🔄</span> Update Group Analysis
+                        </button>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">GROUP BY Rules:</div>
+                            <div class="formula-explanation">
+                                1. All columns in SELECT must either be in GROUP BY or be aggregate functions<br>
+                                2. GROUP BY comes after WHERE and before ORDER BY<br>
+                                3. Use HAVING to filter groups (like WHERE for individual rows)<br>
+                                4. You can GROUP BY multiple columns<br>
+                                5. NULL values form their own group<br>
+                                6. Use ROLLUP or CUBE for subtotals
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- OSEMN Module -->
+                <div class="module-content" id="module-osemn">
+                    <div class="content-header osemn">
+                        <h2 class="content-title">OSEMN Framework</h2>
+                        <p class="content-description">Learn the complete data analysis workflow: Obtain, Scrub, Explore, Model, and iNterpret.</p>
+                    </div>
+                    
+                    <!-- Obtain Data -->
+                    <div class="interactive-section" id="obtain-section">
+                        <div class="example-title">
+                            <span>📥</span>
+                            Obtain Data Sources
+                        </div>
+                        <p class="example-description">Explore different methods of obtaining data for analysis.</p>
+                        
+                        <div class="formula-grid">
+                            <div class="formula-card">
+                                <div class="formula-title">📁 File Import</div>
+                                <div class="formula-explanation">
+                                    <strong>Supported formats:</strong><br>
+                                    • CSV (Comma Separated Values)<br>
+                                    • Excel (.xlsx, .xls)<br>
+                                    • JSON<br>
+                                    • SQL databases<br>
+                                    • APIs<br>
+                                    <br>
+                                    <strong>Google Sheets:</strong><br>
+                                    File → Import → Upload
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">🌐 Web Scraping</div>
+                                <div class="formula-explanation">
+                                    <strong>Common sources:</strong><br>
+                                    • Public APIs (REST, GraphQL)<br>
+                                    • Web pages (with proper permissions)<br>
+                                    • Social media platforms<br>
+                                    • Government open data portals<br>
+                                    <br>
+                                    <strong>Tools:</strong><br>
+                                    • Python (BeautifulSoup, Scrapy)<br>
+                                    • R (rvest)<br>
+                                    • Web scraping extensions
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">🔄 Data Collection</div>
+                                <div class="formula-explanation">
+                                    <strong>Direct collection:</strong><br>
+                                    • Surveys and questionnaires<br>
+                                    • User analytics (Google Analytics)<br>
+                                    • Sensor data (IoT devices)<br>
+                                    • Transaction records<br>
+                                    • Log files<br>
+                                    <br>
+                                    <strong>Considerations:</strong><br>
+                                    • Data privacy laws (GDPR, CCPA)<br>
+                                    • Data quality from the source<br>
+                                    • Storage and security
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Simulate data import from CSV:</label>
+                                <textarea class="data-input" id="importData" rows="5" placeholder="Paste CSV data here...">
+customer_id,name,email,purchase_date,amount,status
+C001,John Smith,john@email.com,2024-01-15,150.00,Active
+C002,Jane Doe,jane@email.com,2024-01-16,225.50,Active
+C003,Bob Wilson,bob@email.com,2024-01-17,300.00,Inactive
+C004,Alice Johnson,alice@email.com,2024-01-18,175.75,Active
+C005,Charlie Brown,charlie@email.com,2024-01-19,89.99,Active
+                                </textarea>
+                            </div>
+                            <button class="calculate-btn" onclick="importCSVData()">
+                                <span>📥</span> Import Data
+                            </button>
+                        </div>
+                        
+                        <div id="importedDataTable"></div>
+                    </div>
+                    
+                    <!-- Scrub Data -->
+                    <div class="interactive-section" id="scrub-section">
+                        <div class="example-title">
+                            <span>🧹</span>
+                            Data Scrubbing Checklist
+                        </div>
+                        <p class="example-description">Systematically clean your data by addressing common issues.</p>
+                        
+                        <div class="progress-container">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Data Quality Progress</span>
+                                <span id="qualityScore">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="qualityProgress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #3498db;">
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">1. Handle Missing Values</h4>
+                                <p style="color: #666; font-size: 14px;">Identify and address null or empty values using mean, median, mode, or removal.</p>
+                                <button class="calculate-btn" style="padding: 8px 15px; font-size: 14px; margin-top: 10px;" onclick="fixMissingValues()">
+                                    Fix Missing Values
+                                </button>
+                            </div>
+                            
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">2. Remove Duplicates</h4>
+                                <p style="color: #666; font-size: 14px;">Identify and eliminate duplicate records that can skew analysis.</p>
+                                <button class="calculate-btn" style="padding: 8px 15px; font-size: 14px; margin-top: 10px;" onclick="removeDuplicates()">
+                                    Remove Duplicates
+                                </button>
+                            </div>
+                            
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #e74c3c;">
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">3. Standardize Formats</h4>
+                                <p style="color: #666; font-size: 14px;">Ensure consistent formatting for dates, currencies, and text data.</p>
+                                <button class="calculate-btn" style="padding: 8px 15px; font-size: 14px; margin-top: 10px;" onclick="standardizeFormats()">
+                                    Standardize Formats
+                                </button>
+                            </div>
+                            
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #f39c12;">
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">4. Correct Data Types</h4>
+                                <p style="color: #666; font-size: 14px;">Verify that numeric fields are numbers, dates are dates, etc.</p>
+                                <button class="calculate-btn" style="padding: 8px 15px; font-size: 14px; margin-top: 10px;" onclick="correctDataTypes()">
+                                    Correct Data Types
+                                </button>
+                            </div>
+                            
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #9b59b6;">
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">5. Validate Data</h4>
+                                <p style="color: #666; font-size: 14px;">Check for logical inconsistencies and outliers.</p>
+                                <button class="calculate-btn" style="padding: 8px 15px; font-size: 14px; margin-top: 10px;" onclick="validateData()">
+                                    Validate Data
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="dataQualityChart"></canvas>
+                        </div>
+                        
+                        <div class="results-grid" id="scrubbingResults">
+                            <!-- Results will appear here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Explore Data -->
+                    <div class="interactive-section" id="explore-section">
+                        <div class="example-title">
+                            <span>🔍</span>
+                            Data Exploration Tools
+                        </div>
+                        <p class="example-description">Use statistical measures and visualizations to understand your data.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Enter data for exploration:</label>
+                                <input type="text" class="data-input" id="exploreData" 
+                                       value="25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, 200" 
+                                       placeholder="Enter numeric values">
+                            </div>
+                            <button class="calculate-btn" onclick="exploreData()">
+                                <span>🔍</span> Explore Data
+                            </button>
+                        </div>
+                        
+                        <div class="results-grid" id="exploreResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="explorationChart"></canvas>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Exploratory Data Analysis (EDA):</div>
+                            <div class="formula-explanation">
+                                • <strong>Descriptive Statistics:</strong> Mean, median, mode, range, variance, standard deviation<br>
+                                • <strong>Data Distribution:</strong> Histograms, box plots, density plots<br>
+                                • <strong>Correlation Analysis:</strong> Scatter plots, correlation matrices<br>
+                                • <strong>Outlier Detection:</strong> Z-scores, IQR method<br>
+                                • <strong>Missing Data Analysis:</strong> Identify patterns in missing values<br>
+                                • <strong>Data Quality Assessment:</strong> Check for inconsistencies and errors
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Model Data -->
+                    <div class="interactive-section" id="model-section">
+                        <div class="example-title">
+                            <span>🧠</span>
+                            Data Modeling
+                        </div>
+                        <p class="example-description">Apply statistical models and machine learning to extract insights from data.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Select Model Type:</label>
+                                <select class="data-input" id="modelType" onchange="updateModel()">
+                                    <option value="regression">Linear Regression</option>
+                                    <option value="classification">Classification</option>
+                                    <option value="clustering">Clustering</option>
+                                    <option value="forecasting">Time Series Forecasting</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="modelChart"></canvas>
+                        </div>
+                        
+                        <div class="results-grid" id="modelResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <button class="calculate-btn" onclick="updateModel()">
+                            <span>🧠</span> Apply Model
+                        </button>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Common Data Models:</div>
+                            <div class="formula-explanation">
+                                • <strong>Linear Regression:</strong> Predict continuous values (y = mx + b)<br>
+                                • <strong>Logistic Regression:</strong> Binary classification (yes/no outcomes)<br>
+                                • <strong>Decision Trees:</strong> Rule-based classification<br>
+                                • <strong>K-Means Clustering:</strong> Group similar data points<br>
+                                • <strong>Time Series:</strong> Forecast future values based on patterns<br>
+                                • <strong>Neural Networks:</strong> Complex pattern recognition
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interpret Results -->
+                    <div class="interactive-section" id="interpret-section">
+                        <div class="example-title">
+                            <span>💡</span>
+                            Interpret & Communicate Results
+                        </div>
+                        <p class="example-description">Translate data insights into actionable business recommendations.</p>
+                        
+                        <div class="formula-grid">
+                            <div class="formula-card">
+                                <div class="formula-title">📊 Create Visualizations</div>
+                                <div class="formula-explanation">
+                                    • Choose the right chart for your message<br>
+                                    • Use color effectively to highlight key points<br>
+                                    • Ensure charts are self-explanatory<br>
+                                    • Include clear titles and labels<br>
+                                    • Consider your audience's technical level
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">📝 Build Data Stories</div>
+                                <div class="formula-explanation">
+                                    • Start with the business question<br>
+                                    • Present key findings clearly<br>
+                                    • Explain methodology briefly<br>
+                                    • Show limitations and assumptions<br>
+                                    • End with actionable recommendations
+                                </div>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <div class="formula-title">🎯 Present Insights</div>
+                                <div class="formula-explanation">
+                                    • Tailor presentation to audience<br>
+                                    • Focus on business impact<br>
+                                    • Use clear, non-technical language<br>
+                                    • Prepare for questions<br>
+                                    • Provide supporting documentation
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="interpretationChart"></canvas>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">Interpretation Checklist:</div>
+                            <div class="formula-explanation">
+                                1. Are the results statistically significant?<br>
+                                2. What is the practical significance?<br>
+                                3. Are there any limitations or biases?<br>
+                                4. Do the findings make business sense?<br>
+                                5. What are the next steps or actions?<br>
+                                6. How can results be validated?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Module -->
+                <div class="module-content" id="module-charts">
+                    <div class="content-header charts">
+                        <h2 class="content-title">Data Visualization</h2>
+                        <p class="content-description">Learn to create effective visualizations to communicate data insights.</p>
+                    </div>
+                    
+                    <!-- Bar Charts -->
+                    <div class="interactive-section" id="barcharts-section">
+                        <div class="example-title">
+                            <span>📊</span>
+                            Bar Chart Creator
+                        </div>
+                        <p class="example-description">Create bar charts to compare categories or show frequency distributions.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Categories (comma separated):</label>
+                                <input type="text" class="data-input" id="barCategories" 
+                                       value="Electronics, Furniture, Appliances, Books, Clothing" 
+                                       onchange="updateBarChart()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Values (comma separated):</label>
+                                <input type="text" class="data-input" id="barValues" 
+                                       value="12000, 8000, 6000, 4000, 7000" 
+                                       onchange="updateBarChart()">
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Chart Title:</label>
+                                <input type="text" class="data-input" id="barTitle" 
+                                       value="Sales by Product Category" 
+                                       onchange="updateBarChart()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Bar Color:</label>
+                                <input type="color" class="data-input" id="barColor" 
+                                       value="#3498db" style="height: 50px;" onchange="updateBarChart()">
+                            </div>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">When to Use Bar Charts:</div>
+                            <div class="formula-explanation">
+                                • Comparing categories or groups<br>
+                                • Showing changes over time (when categories are time periods)<br>
+                                • Displaying frequency distributions<br>
+                                • Comparing parts to a whole (stacked bar charts)<br>
+                                • Showing rankings or ordered categories<br>
+                                <br>
+                                <strong>Best Practices:</strong><br>
+                                • Order bars logically (alphabetically, by value, or chronologically)<br>
+                                • Use consistent colors for the same categories<br>
+                                • Include data labels for clarity<br>
+                                • Start y-axis at zero to avoid misleading comparisons
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Line Charts -->
+                    <div class="interactive-section" id="linecharts-section">
+                        <div class="example-title">
+                            <span>📈</span>
+                            Line Chart Creator
+                        </div>
+                        <p class="example-description">Create line charts to show trends and changes over time.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Time Periods (comma separated):</label>
+                                <input type="text" class="data-input" id="lineLabels" 
+                                       value="Jan, Feb, Mar, Apr, May, Jun, Jul, Aug" 
+                                       onchange="updateLineChart()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Values (comma separated):</label>
+                                <input type="text" class="data-input" id="lineValues" 
+                                       value="12000, 19000, 15000, 25000, 22000, 30000, 28000, 35000" 
+                                       onchange="updateLineChart()">
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Chart Title:</label>
+                                <input type="text" class="data-input" id="lineTitle" 
+                                       value="Monthly Revenue Trend" 
+                                       onchange="updateLineChart()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Add Trend Line:</label>
+                                <select class="data-input" id="trendLine" onchange="updateLineChart()">
+                                    <option value="none">No Trend Line</option>
+                                    <option value="linear">Linear Trend</option>
+                                    <option value="polynomial">Polynomial Trend</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">When to Use Line Charts:</div>
+                            <div class="formula-explanation">
+                                • Showing trends over continuous time periods<br>
+                                • Comparing multiple trends on the same chart<br>
+                                • Displaying rates of change<br>
+                                • Showing cumulative totals (area charts)<br>
+                                • Forecasting future trends<br>
+                                <br>
+                                <strong>Best Practices:</strong><br>
+                                • Use consistent time intervals<br>
+                                • Clearly label time periods<br>
+                                • Use different line styles for multiple series<br>
+                                • Consider using markers for data points<br>
+                                • Use gridlines sparingly for readability
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scatter Plots -->
+                    <div class="interactive-section" id="scatterplots-section">
+                        <div class="example-title">
+                            <span>⚫</span>
+                            Scatter Plot Creator
+                        </div>
+                        <p class="example-description">Create scatter plots to explore relationships between two variables.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">X Values (comma separated):</label>
+                                <input type="text" class="data-input" id="scatterX" 
+                                       value="10, 20, 30, 40, 50, 60, 70, 80, 90, 100" 
+                                       onchange="updateScatterPlot()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Y Values (comma separated):</label>
+                                <input type="text" class="data-input" id="scatterY" 
+                                       value="15, 35, 50, 65, 80, 95, 110, 130, 145, 160" 
+                                       onchange="updateScatterPlot()">
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="scatterPlot"></canvas>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">X-axis Label:</label>
+                                <input type="text" class="data-input" id="scatterXLabel" 
+                                       value="Advertising Spend ($)" 
+                                       onchange="updateScatterPlot()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Y-axis Label:</label>
+                                <input type="text" class="data-input" id="scatterYLabel" 
+                                       value="Sales Revenue ($)" 
+                                       onchange="updateScatterPlot()">
+                            </div>
+                        </div>
+                        
+                        <div class="results-grid" id="scatterResults">
+                            <!-- Results will appear here -->
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">When to Use Scatter Plots:</div>
+                            <div class="formula-explanation">
+                                • Exploring relationships between two continuous variables<br>
+                                • Identifying correlations (positive, negative, or none)<br>
+                                • Detecting outliers or anomalies<br>
+                                • Showing clusters or groupings in data<br>
+                                • Visualizing the strength of relationships<br>
+                                • Comparing distributions across categories<br>
+                                <br>
+                                <strong>Best Practices:</strong><br>
+                                • Add trend lines to show relationships<br>
+                                • Use color or size to represent a third variable<br>
+                                • Include correlation coefficient if applicable<br>
+                                • Label outliers for investigation<br>
+                                • Consider log scales for wide-ranging data
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pie Charts -->
+                    <div class="interactive-section" id="piecharts-section">
+                        <div class="example-title">
+                            <span>🥧</span>
+                            Pie Chart Creator
+                        </div>
+                        <p class="example-description">Create pie charts to show proportions and percentages of a whole.</p>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Categories (comma separated):</label>
+                                <input type="text" class="data-input" id="pieCategories" 
+                                       value="Marketing, Sales, Development, Support, Administration" 
+                                       onchange="updatePieChart()">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Values (comma separated):</label>
+                                <input type="text" class="data-input" id="pieValues" 
+                                       value="35, 25, 20, 15, 5" 
+                                       onchange="updatePieChart()">
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Chart Type:</label>
+                                <select class="data-input" id="pieType" onchange="updatePieChart()">
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="doughnut">Doughnut Chart</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Show Percentages:</label>
+                                <select class="data-input" id="showPercentages" onchange="updatePieChart()">
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="formula-card">
+                            <div class="formula-title">When to Use Pie Charts:</div>
+                            <div class="formula-explanation">
+                                • Showing proportions of a whole (parts-to-whole relationships)<br>
+                                • When you have 2-5 categories (avoid too many slices)<br>
+                                • Comparing relative sizes of categories<br>
+                                • Simple percentage breakdowns<br>
+                                • When exact values are less important than proportions<br>
+                                <br>
+                                <strong>Best Practices:</strong><br>
+                                • Limit to 5-7 slices maximum<br>
+                                • Order slices from largest to smallest<br>
+                                • Use contrasting colors for different slices<br>
+                                • Consider using a donut chart for a cleaner look<br>
+                                • Include percentages and labels for clarity<br>
+                                • Consider bar charts as an alternative for precise comparisons
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Practice Module -->
+                <div class="module-content" id="module-practice">
+                    <div class="content-header practice">
+                        <h2 class="content-title">Practice Arena</h2>
+                        <p class="content-description">Test your data analysis skills with interactive exercises and challenges.</p>
+                    </div>
+                    
+                    <!-- SQL Practice -->
+                    <div class="practice-question">
+                        <div class="question-text" id="question1">
+                            Write a SQL query to select all columns from a table named "employees" where the salary is greater than 50000.
+                        </div>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" onclick="checkSQLAnswer(this, 1, 'SELECT * FROM employees WHERE salary > 50000;')">
+                                SELECT * FROM employees WHERE salary > 50000;
+                            </button>
+                            <button class="option-btn" onclick="checkSQLAnswer(this, 1, 'SELECT ALL FROM employees HAVING salary > 50000;')">
+                                SELECT ALL FROM employees HAVING salary > 50000;
+                            </button>
+                            <button class="option-btn" onclick="checkSQLAnswer(this, 1, 'GET * FROM employees IF salary > 50000;')">
+                                GET * FROM employees IF salary > 50000;
+                            </button>
+                            <button class="option-btn" onclick="checkSQLAnswer(this, 1, 'SELECT employees WHERE salary > 50000;')">
+                                SELECT employees WHERE salary > 50000;
+                            </button>
+                        </div>
+                        
+                        <div class="feedback" id="feedback1"></div>
+                    </div>
+                    
+                    <!-- Spreadsheet Practice -->
+                    <div class="practice-question">
+                        <div class="question-text" id="question2">
+                            Which spreadsheet function would you use to calculate the average of values in cells A1 through A10?
+                        </div>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" onclick="checkAnswer(this, 2, 'average')">=AVERAGE(A1:A10)</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 2, 'sum')">=SUM(A1:A10)</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 2, 'mean')">=MEAN(A1:A10)</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 2, 'avg')">=AVG(A1:A10)</button>
+                        </div>
+                        
+                        <div class="feedback" id="feedback2"></div>
+                    </div>
+                    
+                    <!-- OSEMN Practice -->
+                    <div class="practice-question">
+                        <div class="question-text" id="question3">
+                            In the OSEMN framework, which step involves handling missing values and removing duplicates?
+                        </div>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" onclick="checkAnswer(this, 3, 'obtain')">Obtain</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 3, 'scrub')">Scrub</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 3, 'explore')">Explore</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 3, 'model')">Model</button>
+                        </div>
+                        
+                        <div class="feedback" id="feedback3"></div>
+                    </div>
+                    
+                    <!-- Visualization Practice -->
+                    <div class="practice-question">
+                        <div class="question-text" id="question4">
+                            Which chart type is most appropriate for showing the proportion of sales by product category?
+                        </div>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" onclick="checkAnswer(this, 4, 'pie')">Pie Chart</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 4, 'line')">Line Chart</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 4, 'scatter')">Scatter Plot</button>
+                            <button class="option-btn" onclick="checkAnswer(this, 4, 'bar')">Bar Chart</button>
+                        </div>
+                        
+                        <div class="feedback" id="feedback4"></div>
+                    </div>
+                    
+                    <!-- SQL Challenge -->
+                    <div class="practice-question">
+                        <div class="question-text" id="question5">
+                            Write a SQL query to find the total sales amount for each product category, ordered from highest to lowest.
+                        </div>
+                        
+                        <div class="data-input-section">
+                            <div class="input-group">
+                                <label class="input-label">Your SQL Query:</label>
+                                <input type="text" class="data-input" id="sqlChallenge" 
+                                       placeholder="Enter your SQL query here...">
+                            </div>
+                            <button class="calculate-btn" onclick="checkSQLChallenge()">
+                                <span>✓</span> Check Answer
+                            </button>
+                        </div>
+                        
+                        <div class="feedback" id="feedback5"></div>
+                    </div>
+                    
+                    <!-- Scenario Challenge -->
+                    <div class="practice-question">
+                        <div class="question-text" id="question6">
+                            You're analyzing customer data and need to identify customers who have made purchases over $100 in the last month and are from New York. Which SQL query would accomplish this?
+                        </div>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" onclick="checkAnswer(this, 6, 'correct')">
+                                SELECT * FROM customers WHERE total_purchases > 100 AND city = 'New York' AND last_purchase_date >= DATE_SUB(NOW(), INTERVAL 1 MONTH);
+                            </button>
+                            <button class="option-btn" onclick="checkAnswer(this, 6, 'wrong1')">
+                                SELECT * FROM customers WHERE total_purchases > 100 OR city = 'New York';
+                            </button>
+                            <button class="option-btn" onclick="checkAnswer(this, 6, 'wrong2')">
+                                SELECT customers FROM * WHERE purchases > 100 AND location = 'NY';
+                            </button>
+                            <button class="option-btn" onclick="checkAnswer(this, 6, 'wrong3')">
+                                GET customers WITH purchases > 100 FROM New York LAST MONTH;
+                            </button>
+                        </div>
+                        
+                        <div class="feedback" id="feedback6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentModule = 'spreadsheets';
+        let currentLesson = 'cleaning';
+        let charts = {};
+        let dataQualityScore = 0;
+        
+        // Sample data for SQL queries
+        const sampleData = {
+            customers: [
+                {customer_id: 'C001', first_name: 'John', last_name: 'Smith', email: 'john@email.com', join_date: '2023-01-15', city: 'New York', status: 'Active', total_purchases: 450.00},
+                {customer_id: 'C002', first_name: 'Jane', last_name: 'Doe', email: 'jane@email.com', join_date: '2023-02-20', city: 'Los Angeles', status: 'Active', total_purchases: 625.50},
+                {customer_id: 'C003', first_name: 'Bob', last_name: 'Wilson', email: 'bob@email.com', join_date: '2023-03-10', city: 'Chicago', status: 'Inactive', total_purchases: 300.00},
+                {customer_id: 'C004', first_name: 'Alice', last_name: 'Johnson', email: 'alice@email.com', join_date: '2023-04-05', city: 'New York', status: 'Active', total_purchases: 475.75},
+                {customer_id: 'C005', first_name: 'Charlie', last_name: 'Brown', email: 'charlie@email.com', join_date: '2023-05-12', city: 'Miami', status: 'Active', total_purchases: 89.99},
+                {customer_id: 'C006', first_name: 'Diana', last_name: 'Prince', email: 'diana@email.com', join_date: '2023-06-18', city: 'Los Angeles', status: 'Active', total_purchases: 1200.00},
+                {customer_id: 'C007', first_name: 'Edward', last_name: 'Norton', email: 'edward@email.com', join_date: '2023-07-22', city: 'Chicago', status: 'Inactive', total_purchases: 75.50},
+                {customer_id: 'C008', first_name: 'Fiona', last_name: 'Apple', email: 'fiona@email.com', join_date: '2023-08-30', city: 'New York', status: 'Active', total_purchases: 850.25}
+            ],
+            products: [
+                {product_id: 'P001', product_name: 'Laptop', category: 'Electronics', price: 999.99, quantity: 50},
+                {product_id: 'P002', product_name: 'Desk Chair', category: 'Furniture', price: 199.99, quantity: 25},
+                {product_id: 'P003', product_name: 'Coffee Maker', category: 'Appliances', price: 79.99, quantity: 100},
+                {product_id: 'P004', product_name: 'Headphones', category: 'Electronics', price: 149.99, quantity: 75},
+                {product_id: 'P005', product_name: 'Desk', category: 'Furniture', price: 299.99, quantity: 30},
+                {product_id: 'P006', product_name: 'Blender', category: 'Appliances', price: 59.99, quantity: 80},
+                {product_id: 'P007', product_name: 'Tablet', category: 'Electronics', price: 399.99, quantity: 40},
+                {product_id: 'P008', product_name: 'Office Lamp', category: 'Furniture', price: 49.99, quantity: 120}
+            ],
+            orders: [
+                {order_id: 'O001', customer_id: 'C001', product_id: 'P001', quantity: 1, total_amount: 999.99, order_date: '2024-01-15'},
+                {order_id: 'O002', customer_id: 'C002', product_id: 'P002', quantity: 2, total_amount: 399.98, order_date: '2024-01-16'},
+                {order_id: 'O003', customer_id: 'C001', product_id: 'P003', quantity: 1, total_amount: 79.99, order_date: '2024-01-17'},
+                {order_id: 'O004', customer_id: 'C003', product_id: 'P004', quantity: 1, total_amount: 149.99, order_date: '2024-01-18'},
+                {order_id: 'O005', customer_id: 'C004', product_id: 'P005', quantity: 1, total_amount: 299.99, order_date: '2024-01-19'},
+                {order_id: 'O006', customer_id: 'C005', product_id: 'P006', quantity: 3, total_amount: 179.97, order_date: '2024-01-20'},
+                {order_id: 'O007', customer_id: 'C002', product_id: 'P007', quantity: 1, total_amount: 399.99, order_date: '2024-01-21'},
+                {order_id: 'O008', customer_id: 'C006', product_id: 'P008', quantity: 4, total_amount: 199.96, order_date: '2024-01-22'},
+                {order_id: 'O009', customer_id: 'C001', product_id: 'P002', quantity: 1, total_amount: 199.99, order_date: '2024-01-23'},
+                {order_id: 'O010', customer_id: 'C007', product_id: 'P003', quantity: 2, total_amount: 159.98, order_date: '2024-01-24'}
+            ]
+        };
+        
+        // Initialize the application
+        function init() {
+            showModule('spreadsheets');
+            showLesson('cleaning');
+            calculateFunctions();
+            updateAggregateQuery();
+            initializeCharts();
+            updatePivotTable();
+            updateBarChart();
+            updateLineChart();
+            updateScatterPlot();
+            updatePieChart();
+            updateModel();
+            updateInterpretationChart();
+        }
+        
+        // Show module
+        function showModule(module) {
+            currentModule = module;
+            
+            // Update navigation buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeBtn = document.querySelector(`[data-module="${module}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            // Update module content
+            document.querySelectorAll('.module-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const activeModule = document.getElementById(`module-${module}`);
+            if (activeModule) {
+                activeModule.classList.add('active');
+            }
+            
+            // Update sidebar visibility
+            updateSidebar();
+        }
+        
+        // Update sidebar visibility
+        function updateSidebar() {
+            document.querySelectorAll('.module-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            const activeSection = document.getElementById(`${currentModule}-section`);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+            }
+        }
+        
+        // Show lesson
+        function showLesson(lesson) {
+            currentLesson = lesson;
+            
+            // Update lesson buttons
+            document.querySelectorAll('.lesson-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeBtn = document.querySelector(`[data-lesson="${lesson}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            // Scroll to the lesson section
+            const section = document.getElementById(`${lesson}-section`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // Clean data function
+        function cleanData() {
+            const removeDuplicates = document.getElementById('removeDuplicates').checked;
+            const standardizeDates = document.getElementById('standardizeDates').checked;
+            const formatCurrency = document.getElementById('formatCurrency').checked;
+            const fillMissing = document.getElementById('fillMissing').checked;
+            const standardizeStatus = document.getElementById('standardizeStatus').checked;
+            
+            let issuesFixed = 0;
+            let cleanedRows = 5;
+            
+            if (removeDuplicates) {
+                issuesFixed += 1;
+                cleanedRows = 4; // One duplicate removed
+            }
+            if (standardizeDates) issuesFixed += 2; // Two date formats fixed
+            if (formatCurrency) issuesFixed += 2; // Two currency formats fixed
+            if (fillMissing) issuesFixed += 1; // One missing value filled
+            if (standardizeStatus) issuesFixed += 1; // One status standardized
+            
+            const resultsHTML = `
+                <div class="result-card" style="border-color: #3498db;">
+                    <div class="result-label">Issues Fixed</div>
+                    <div class="result-value">${issuesFixed}</div>
+                </div>
+                <div class="result-card" style="border-color: #2ecc71;">
+                    <div class="result-label">Cleaned Rows</div>
+                    <div class="result-value">${cleanedRows}</div>
+                </div>
+                <div class="result-card" style="border-color: #e74c3c;">
+                    <div class="result-label">Data Quality</div>
+                    <div class="result-value">${Math.min(100, 60 + issuesFixed * 10)}%</div>
+                </div>
+                <div class="result-card" style="border-color: #9b59b6;">
+                    <div class="result-label">Time Saved</div>
+                    <div class="result-value">${issuesFixed * 5} min</div>
+                </div>
+            `;
+            
+            document.getElementById('cleaningResults').innerHTML = resultsHTML;
+        }
+        
+        // Calculate spreadsheet functions
+        function calculateFunctions() {
+            const input = document.getElementById('functionInput').value;
+            const numbers = parseNumbers(input);
+            
+            if (numbers.length === 0) return;
+            
+            const sum = numbers.reduce((a, b) => a + b, 0);
+            const average = sum / numbers.length;
+            const count = numbers.length;
+            const min = Math.min(...numbers);
+            const max = Math.max(...numbers);
+            const median = calculateMedian(numbers);
+            
+            const resultsHTML = `
+                <div class="result-card" style="border-color: #3498db;">
+                    <div class="result-label">SUM</div>
+                    <div class="result-value">${sum.toFixed(2)}</div>
+                </div>
+                <div class="result-card" style="border-color: #2ecc71;">
+                    <div class="result-label">AVERAGE</div>
+                    <div class="result-value">${average.toFixed(2)}</div>
+                </div>
+                <div class="result-card" style="border-color: #e74c3c;">
+                    <div class="result-label">COUNT</div>
+                    <div class="result-value">${count}</div>
+                </div>
+                <div class="result-card" style="border-color: #9b59b6;">
+                    <div class="result-label">MIN/MAX</div>
+                    <div class="result-value">${min}/${max}</div>
+                </div>
+            `;
+            
+            document.getElementById('functionResults').innerHTML = resultsHTML;
+        }
+        
+        // Apply filter
+        function applyFilter() {
+            const filterStatus = document.getElementById('filterStatus').value;
+            updateFilteringChart(filterStatus);
+        }
+        
+        // Apply sort
+        function applySort() {
+            const sortColumn = document.getElementById('sortColumn').value;
+            // In a real application, this would sort the data
+            console.log(`Sorting by: ${sortColumn}`);
+        }
+        
+        // Update pivot table - FIXED VERSION
+        function updatePivotTable() {
+            const rows = document.getElementById('pivotRows').value;
+            const values = document.getElementById('pivotValues').value;
+            
+            let pivotData = [];
+            let pivotHTML = '';
+            
+            if (rows === 'category') {
+                pivotData = [
+                    {category: 'Electronics', sum: 1549.97, count: 3, average: 516.66},
+                    {category: 'Furniture', sum: 899.96, count: 3, average: 299.99},
+                    {category: 'Appliances', sum: 419.94, count: 4, average: 104.99}
+                ];
+                
+                pivotHTML = `
+                    <div class="pivot-cell pivot-header">Product Category</div>
+                    <div class="pivot-cell pivot-header">${values === 'sum' ? 'Total Sales' : values === 'count' ? 'Order Count' : 'Average Sale'}</div>
+                    <div class="pivot-cell pivot-header">% of Total</div>
+                    <div class="pivot-cell pivot-header">YoY Growth</div>
+                    <div class="pivot-cell pivot-header">Trend</div>
+                `;
+                
+                const total = values === 'sum' ? 2869.87 : values === 'count' ? 10 : 307.21;
+                
+                pivotData.forEach(item => {
+                    const value = values === 'sum' ? item.sum : values === 'count' ? item.count : item.average;
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    
+                    pivotHTML += `
+                        <div class="pivot-cell">${item.category}</div>
+                        <div class="pivot-cell">${values === 'sum' ? '$' : ''}${value.toFixed(2)}</div>
+                        <div class="pivot-cell">${percentage}%</div>
+                        <div class="pivot-cell">${(Math.random() * 20 + 5).toFixed(1)}%</div>
+                        <div class="pivot-cell">${value > (values === 'sum' ? 900 : values === 'count' ? 3 : 200) ? '📈' : '📉'}</div>
+                    `;
+                });
+                
+            } else if (rows === 'status') {
+                pivotData = [
+                    {status: 'Active', sum: 3690.75, count: 6, average: 615.13},
+                    {status: 'Inactive', sum: 375.50, count: 2, average: 187.75}
+                ];
+                
+                pivotHTML = `
+                    <div class="pivot-cell pivot-header">Customer Status</div>
+                    <div class="pivot-cell pivot-header">${values === 'sum' ? 'Total Revenue' : values === 'count' ? 'Customer Count' : 'Avg Purchase'}</div>
+                    <div class="pivot-cell pivot-header">% of Total</div>
+                    <div class="pivot-cell pivot-header">YoY Growth</div>
+                    <div class="pivot-cell pivot-header">Trend</div>
+                `;
+                
+                const total = values === 'sum' ? 4066.25 : values === 'count' ? 8 : 401.44;
+                
+                pivotData.forEach(item => {
+                    const value = values === 'sum' ? item.sum : values === 'count' ? item.count : item.average;
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    
+                    pivotHTML += `
+                        <div class="pivot-cell">${item.status}</div>
+                        <div class="pivot-cell">${values === 'sum' ? '$' : ''}${value.toFixed(2)}</div>
+                        <div class="pivot-cell">${percentage}%</div>
+                        <div class="pivot-cell">${(Math.random() * 20 + 5).toFixed(1)}%</div>
+                        <div class="pivot-cell">${value > (values === 'sum' ? 2000 : values === 'count' ? 4 : 300) ? '📈' : '📉'}</div>
+                    `;
+                });
+                
+            } else if (rows === 'month') {
+                pivotData = [
+                    {month: 'January', sum: 2869.87, count: 10, average: 286.99},
+                    {month: 'February', sum: 2250.50, count: 8, average: 281.31},
+                    {month: 'March', sum: 3100.25, count: 12, average: 258.35}
+                ];
+                
+                pivotHTML = `
+                    <div class="pivot-cell pivot-header">Month</div>
+                    <div class="pivot-cell pivot-header">${values === 'sum' ? 'Total Revenue' : values === 'count' ? 'Order Count' : 'Avg Order'}</div>
+                    <div class="pivot-cell pivot-header">% of Total</div>
+                    <div class="pivot-cell pivot-header">MoM Growth</div>
+                    <div class="pivot-cell pivot-header">Trend</div>
+                `;
+                
+                const total = values === 'sum' ? 8220.62 : values === 'count' ? 30 : 275.55;
+                
+                pivotData.forEach(item => {
+                    const value = values === 'sum' ? item.sum : values === 'count' ? item.count : item.average;
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    
+                    pivotHTML += `
+                        <div class="pivot-cell">${item.month}</div>
+                        <div class="pivot-cell">${values === 'sum' ? '$' : ''}${value.toFixed(2)}</div>
+                        <div class="pivot-cell">${percentage}%</div>
+                        <div class="pivot-cell">${(Math.random() * 15 + 2).toFixed(1)}%</div>
+                        <div class="pivot-cell">${value > (values === 'sum' ? 2800 : values === 'count' ? 9 : 270) ? '📈' : '📉'}</div>
+                    `;
+                });
+            }
+            
+            document.getElementById('pivotTable').innerHTML = pivotHTML;
+            updatePivotChart(pivotData, values, rows);
+        }
+        
+        // Run SQL query
+        function runSQLQuery() {
+            const query = document.getElementById('sqlSelect').value.toLowerCase();
+            let results = sampleData.customers;
+            
+            // Simple query parsing for demonstration
+            if (query.includes('products')) {
+                let tableHTML = '<table class="data-table"><thead><tr>';
+                tableHTML += '<th>Product ID</th><th>Product Name</th><th>Category</th><th>Price</th><th>Quantity</th></tr></thead><tbody>';
+                
+                sampleData.products.forEach(product => {
+                    tableHTML += `<tr>
+                        <td>${product.product_id}</td>
+                        <td>${product.product_name}</td>
+                        <td>${product.category}</td>
+                        <td>$${product.price.toFixed(2)}</td>
+                        <td>${product.quantity}</td>
+                    </tr>`;
+                });
+                
+                tableHTML += '</tbody></table>';
+                document.getElementById('sqlResults').innerHTML = tableHTML;
+            } else {
+                let tableHTML = '';
+                results.forEach(customer => {
+                    tableHTML += `
+                        <tr>
+                            <td>${customer.customer_id}</td>
+                            <td>${customer.first_name}</td>
+                            <td>${customer.last_name}</td>
+                            <td>${customer.email}</td>
+                            <td>${customer.join_date}</td>
+                            <td>${customer.city}</td>
+                        </tr>
+                    `;
+                });
+                
+                document.querySelector('#sqlResults tbody').innerHTML = tableHTML;
+            }
+        }
+        
+        // Run WHERE query
+        function runWhereQuery() {
+            const column = document.getElementById('whereColumn').value;
+            const condition = document.getElementById('whereCondition').value;
+            const value = document.getElementById('whereValue').value.toLowerCase();
+            
+            let results = [];
+            let columnName = '';
+            
+            if (column === 'price' || column === 'quantity') {
+                results = sampleData.products;
+                columnName = column === 'price' ? 'Price' : 'Quantity';
+            } else if (column === 'category') {
+                results = sampleData.products;
+                columnName = 'Category';
+            } else {
+                results = sampleData.customers;
+                columnName = 'Status';
+            }
+            
+            let filteredResults = [...results];
+            
+            // Apply filter based on condition
+            switch(condition) {
+                case 'greater':
+                    filteredResults = filteredResults.filter(item => parseFloat(item[column]) > parseFloat(value));
+                    break;
+                case 'less':
+                    filteredResults = filteredResults.filter(item => parseFloat(item[column]) < parseFloat(value));
+                    break;
+                case 'equal':
+                    filteredResults = filteredResults.filter(item => item[column].toString().toLowerCase() === value.toLowerCase());
+                    break;
+                case 'notequal':
+                    filteredResults = filteredResults.filter(item => item[column].toString().toLowerCase() !== value.toLowerCase());
+                    break;
+                case 'contains':
+                    filteredResults = filteredResults.filter(item => item[column].toString().toLowerCase().includes(value.toLowerCase()));
+                    break;
+            }
+            
+            // Display results
+            let resultHTML = `<h4>Filter Results: ${filteredResults.length} items found</h4>`;
+            resultHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">';
+            
+            filteredResults.slice(0, 6).forEach(item => {
+                if (column === 'price' || column === 'quantity' || column === 'category') {
+                    resultHTML += `
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 3px solid #3498db;">
+                            <strong>${item.product_name}</strong><br>
+                            Category: ${item.category}<br>
+                            Price: $${item.price}<br>
+                            Quantity: ${item.quantity}
+                        </div>
+                    `;
+                } else {
+                    resultHTML += `
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 3px solid #2ecc71;">
+                            <strong>${item.first_name} ${item.last_name}</strong><br>
+                            Email: ${item.email}<br>
+                            City: ${item.city}<br>
+                            Status: ${item.status}
+                        </div>
+                    `;
+                }
+            });
+            
+            resultHTML += '</div>';
+            
+            // Update the results container
+            document.getElementById('whereResults').innerHTML = resultHTML;
+        }
+        
+        // Update aggregate query display
+        function updateAggregateQuery() {
+            const func = document.getElementById('aggregateFunction').value;
+            const functionNames = {
+                count: 'COUNT',
+                sum: 'SUM',
+                avg: 'AVG',
+                min: 'MIN',
+                max: 'MAX'
+            };
+            
+            const column = func === 'count' ? '*' : 'total_amount';
+            const displayQuery = `
+                <span class="sql-keyword">SELECT</span> 
+                <span class="sql-function">${functionNames[func]}</span>(${column}) 
+                <span class="sql-keyword">AS</span> result 
+                <span class="sql-keyword">FROM</span> orders;
+            `;
+            
+            document.getElementById('aggregateQueryDisplay').innerHTML = displayQuery;
+        }
+        
+        // Run aggregate query
+        function runAggregateQuery() {
+            const func = document.getElementById('aggregateFunction').value;
+            const orders = sampleData.orders;
+            const values = orders.map(o => o.total_amount);
+            
+            let result;
+            let label = '';
+            
+            switch(func) {
+                case 'count':
+                    result = values.length;
+                    label = 'Total Orders';
+                    break;
+                case 'sum':
+                    result = values.reduce((a, b) => a + b, 0);
+                    label = 'Total Revenue';
+                    break;
+                case 'avg':
+                    result = values.reduce((a, b) => a + b, 0) / values.length;
+                    label = 'Average Order Value';
+                    break;
+                case 'min':
+                    result = Math.min(...values);
+                    label = 'Smallest Order';
+                    break;
+                case 'max':
+                    result = Math.max(...values);
+                    label = 'Largest Order';
+                    break;
+            }
+            
+            const resultsHTML = `
+                <div class="result-card" style="border-color: #3498db;">
+                    <div class="result-label">Function</div>
+                    <div class="result-value" style="font-size: 20px;">${func.toUpperCase()}</div>
+                </div>
+                <div class="result-card" style="border-color: #2ecc71;">
+                    <div class="result-label">${label}</div>
+                    <div class="result-value">${func === 'count' ? result : '$' + result.toFixed(2)}</div>
+                </div>
+                <div class="result-card" style="border-color: #e74c3c;">
+                    <div class="result-label">Records Analyzed</div>
+                    <div class="result-value">${values.length}</div>
+                </div>
+                <div class="result-card" style="border-color: #9b59b6;">
+                    <div class="result-label">Time Period</div>
+                    <div class="result-value">10 days</div>
+                </div>
+            `;
+            
+            document.getElementById('aggregateResults').innerHTML = resultsHTML;
+        }
+        
+        // Import CSV data
+        function importCSVData() {
+            const csvData = document.getElementById('importData').value;
+            const lines = csvData.trim().split('\n');
+            const headers = lines[0].split(',');
+            
+            let tableHTML = '<table class="data-table"><thead><tr>';
+            headers.forEach(header => {
+                tableHTML += `<th>${header}</th>`;
+            });
+            tableHTML += '</tr></thead><tbody>';
+            
+            for (let i = 1; i < Math.min(lines.length, 6); i++) {
+                const cells = lines[i].split(',');
+                tableHTML += '<tr>';
+                cells.forEach(cell => {
+                    tableHTML += `<td>${cell}</td>`;
+                });
+                tableHTML += '</tr>';
+            }
+            
+            tableHTML += '</tbody></table>';
+            
+            document.getElementById('importedDataTable').innerHTML = tableHTML;
+        }
+        
+        // Data scrubbing functions
+        function fixMissingValues() {
+            dataQualityScore += 15;
+            updateQualityScore();
+            updateScrubbingResults('Fixed 3 missing values using median imputation');
+        }
+        
+        function removeDuplicates() {
+            dataQualityScore += 20;
+            updateQualityScore();
+            updateScrubbingResults('Removed 2 duplicate records');
+        }
+        
+        function standardizeFormats() {
+            dataQualityScore += 25;
+            updateQualityScore();
+            updateScrubbingResults('Standardized date formats and currency values');
+        }
+        
+        function correctDataTypes() {
+            dataQualityScore += 20;
+            updateQualityScore();
+            updateScrubbingResults('Corrected data types for 5 columns');
+        }
+        
+        function validateData() {
+            dataQualityScore += 20;
+            updateQualityScore();
+            updateScrubbingResults('Validated data ranges and removed 1 outlier');
+        }
+        
+        function updateQualityScore() {
+            const score = Math.min(100, dataQualityScore);
+            document.getElementById('qualityScore').textContent = `${score}%`;
+            document.getElementById('qualityProgress').style.width = `${score}%`;
+            
+            // Update data quality chart
+            updateDataQualityChart(score);
+        }
+        
+        function updateScrubbingResults(message) {
+            const resultsDiv = document.getElementById('scrubbingResults');
+            let currentHTML = resultsDiv.innerHTML;
+            
+            currentHTML += `
+                <div class="result-card" style="border-color: #2ecc71;">
+                    <div class="result-label">Action Completed</div>
+                    <div class="result-value" style="font-size: 16px;">${message}</div>
+                </div>
+            `;
+            
+            resultsDiv.innerHTML = currentHTML;
+        }
+        
+        // Explore data
+        function exploreData() {
+            const input = document.getElementById('exploreData').value;
+            const numbers = parseNumbers(input);
+            
+            if (numbers.length === 0) return;
+            
+            const sum = numbers.reduce((a, b) => a + b, 0);
+            const mean = sum / numbers.length;
+            const sorted = [...numbers].sort((a, b) => a - b);
+            const median = calculateMedian(numbers);
+            const min = Math.min(...numbers);
+            const max = Math.max(...numbers);
+            const range = max - min;
+            
+            // Calculate variance and standard deviation
+            const variance = numbers.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / numbers.length;
+            const stdDev = Math.sqrt(variance);
+            
+            // Calculate quartiles
+            const q1 = calculatePercentile(sorted, 25);
+            const q3 = calculatePercentile(sorted, 75);
+            const iqr = q3 - q1;
+            
+            // Identify outliers
+            const lowerBound = q1 - 1.5 * iqr;
+            const upperBound = q3 + 1.5 * iqr;
+            const outliers = numbers.filter(n => n < lowerBound || n > upperBound);
+            
+            const resultsHTML = `
+                <div class="result-card" style="border-color: #3498db;">
+                    <div class="result-label">Count</div>
+                    <div class="result-value">${numbers.length}</div>
+                </div>
+                <div class="result-card" style="border-color: #2ecc71;">
+                    <div class="result-label">Mean</div>
+                    <div class="result-value">${mean.toFixed(2)}</div>
+                </div>
+                <div class="result-card" style="border-color: #e74c3c;">
+                    <div class="result-label">Median</div>
+                    <div class="result-value">${median.toFixed(2)}</div>
+                </div>
+                <div class="result-card" style="border-color: #9b59b6;">
+                    <div class="result-label">Std Dev</div>
+                    <div class="result-value">${stdDev.toFixed(2)}</div>
+                </div>
+            `;
+            
+            document.getElementById('exploreResults').innerHTML = resultsHTML;
+            
+            // Update exploration chart
+            updateExplorationChart(numbers);
+        }
+        
+        // Initialize all charts
+        function initializeCharts() {
+            // Filtering Chart
+            const filteringCtx = document.getElementById('filteringChart').getContext('2d');
+            charts.filtering = new Chart(filteringCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Active', 'Inactive'],
+                    datasets: [{
+                        label: 'Customer Count',
+                        data: [6, 2],
+                        backgroundColor: ['#2ecc71', '#e74c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Customer Distribution by Status'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Customers'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Pivot Chart
+            const pivotCtx = document.getElementById('pivotChart').getContext('2d');
+            charts.pivot = new Chart(pivotCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Electronics', 'Furniture', 'Appliances'],
+                    datasets: [{
+                        label: 'Total Sales',
+                        data: [1549.97, 899.96, 419.94],
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Sales by Product Category'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Sales ($)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Group By Chart
+            const groupbyCtx = document.getElementById('groupbyChart').getContext('2d');
+            charts.groupby = new Chart(groupbyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Electronics', 'Furniture', 'Appliances'],
+                    datasets: [{
+                        label: 'Product Count',
+                        data: [3, 3, 2],
+                        backgroundColor: [
+                            'rgba(52, 152, 219, 0.7)',
+                            'rgba(46, 204, 113, 0.7)',
+                            'rgba(155, 89, 182, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Products by Category'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Products'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Data Quality Chart
+            const qualityCtx = document.getElementById('dataQualityChart').getContext('2d');
+            charts.quality = new Chart(qualityCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Clean Data', 'Issues Remaining'],
+                    datasets: [{
+                        data: [60, 40],
+                        backgroundColor: ['#2ecc71', '#e74c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Data Quality Assessment'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            
+            // Exploration Chart
+            const exploreCtx = document.getElementById('explorationChart').getContext('2d');
+            charts.explore = new Chart(exploreCtx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 18}, (_, i) => i + 1),
+                    datasets: [{
+                        label: 'Data Points',
+                        data: [25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, 200],
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        fill: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Data Distribution'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Values'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Data Point'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Model Chart
+            const modelCtx = document.getElementById('modelChart').getContext('2d');
+            charts.model = new Chart(modelCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Data Points',
+                        data: [
+                            {x: 1, y: 2},
+                            {x: 2, y: 4},
+                            {x: 3, y: 5},
+                            {x: 4, y: 4},
+                            {x: 5, y: 5},
+                            {x: 6, y: 7},
+                            {x: 7, y: 8},
+                            {x: 8, y: 9},
+                            {x: 9, y: 10},
+                            {x: 10, y: 12}
+                        ],
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Linear Regression Model'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'X Variable'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Y Variable'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Interpretation Chart
+            const interpretCtx = document.getElementById('interpretationChart').getContext('2d');
+            charts.interpretation = new Chart(interpretCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                    datasets: [{
+                        label: 'Actual',
+                        data: [120, 150, 180, 220],
+                        backgroundColor: '#3498db'
+                    }, {
+                        label: 'Target',
+                        data: [100, 140, 190, 240],
+                        backgroundColor: '#2ecc71',
+                        type: 'line',
+                        borderColor: '#2ecc71',
+                        borderWidth: 3,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Quarterly Performance vs Targets'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Revenue ($K)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Bar Chart
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            charts.bar = new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Electronics', 'Furniture', 'Appliances', 'Books', 'Clothing'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [12000, 8000, 6000, 4000, 7000],
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Sales by Product Category'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Sales ($)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Line Chart
+            const lineCtx = document.getElementById('lineChart').getContext('2d');
+            charts.line = new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [12000, 19000, 15000, 25000, 22000, 30000, 28000, 35000],
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Monthly Revenue Trend'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Revenue ($)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Scatter Plot
+            const scatterCtx = document.getElementById('scatterPlot').getContext('2d');
+            charts.scatter = new Chart(scatterCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Advertising vs Sales',
+                        data: [
+                            {x: 10, y: 15},
+                            {x: 20, y: 35},
+                            {x: 30, y: 50},
+                            {x: 40, y: 65},
+                            {x: 50, y: 80},
+                            {x: 60, y: 95},
+                            {x: 70, y: 110},
+                            {x: 80, y: 130},
+                            {x: 90, y: 145},
+                            {x: 100, y: 160}
+                        ],
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Advertising Spend vs Sales Revenue'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'Advertising Spend ($)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Sales Revenue ($)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Pie Chart
+            const pieCtx = document.getElementById('pieChart').getContext('2d');
+            charts.pie = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Marketing', 'Sales', 'Development', 'Support', 'Administration'],
+                    datasets: [{
+                        data: [35, 25, 20, 15, 5],
+                        backgroundColor: [
+                            '#3498db',
+                            '#2ecc71',
+                            '#e74c3c',
+                            '#f39c12',
+                            '#9b59b6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Department Budget Allocation'
+                        },
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Update filtering chart
+        function updateFilteringChart(filterStatus) {
+            let activeCount = 6;
+            let inactiveCount = 2;
+            
+            if (filterStatus === 'active') {
+                charts.filtering.data.datasets[0].data = [activeCount, 0];
+            } else if (filterStatus === 'inactive') {
+                charts.filtering.data.datasets[0].data = [0, inactiveCount];
+            } else {
+                charts.filtering.data.datasets[0].data = [activeCount, inactiveCount];
+            }
+            
+            charts.filtering.update();
+        }
+        
+        // Update pivot chart
+        function updatePivotChart(pivotData, values, rows) {
+            const labels = pivotData.map(item => item[rows]);
+            const data = pivotData.map(item => 
+                values === 'sum' ? item.sum : 
+                values === 'count' ? item.count : 
+                item.average
+            );
+            
+            const titles = {
+                'category': 'Product Category',
+                'status': 'Customer Status',
+                'month': 'Month'
+            };
+            
+            const valueTitles = {
+                'sum': 'Total',
+                'count': 'Count',
+                'average': 'Average'
+            };
+            
+            charts.pivot.data.labels = labels;
+            charts.pivot.data.datasets[0].data = data;
+            charts.pivot.options.plugins.title.text = 
+                `${valueTitles[values]} by ${titles[rows]}`;
+            
+            charts.pivot.update();
+        }
+        
+        // Update group by chart
+        function updateGroupByChart() {
+            const groupBy = document.getElementById('groupByColumn').value;
+            const aggregate = document.getElementById('groupByAggregate').value;
+            
+            let labels = [];
+            let data = [];
+            let title = '';
+            
+            if (groupBy === 'category') {
+                labels = ['Electronics', 'Furniture', 'Appliances'];
+                if (aggregate === 'count') {
+                    data = [3, 3, 2];
+                    title = 'Product Count by Category';
+                } else if (aggregate === 'sum') {
+                    data = [1549.97, 899.96, 419.94];
+                    title = 'Total Value by Category';
+                } else {
+                    data = [516.66, 299.99, 209.97];
+                    title = 'Average Value by Category';
+                }
+            } else if (groupBy === 'status') {
+                labels = ['Active', 'Inactive'];
+                if (aggregate === 'count') {
+                    data = [6, 2];
+                    title = 'Customer Count by Status';
+                } else if (aggregate === 'sum') {
+                    data = [3690.75, 375.50];
+                    title = 'Total Purchases by Status';
+                } else {
+                    data = [615.13, 187.75];
+                    title = 'Average Purchase by Status';
+                }
+            } else {
+                labels = ['New York', 'Los Angeles', 'Chicago', 'Miami'];
+                if (aggregate === 'count') {
+                    data = [3, 2, 2, 1];
+                    title = 'Customer Count by City';
+                } else if (aggregate === 'sum') {
+                    data = [1776.24, 1825.50, 375.50, 89.99];
+                    title = 'Total Purchases by City';
+                } else {
+                    data = [592.08, 912.75, 187.75, 89.99];
+                    title = 'Average Purchase by City';
+                }
+            }
+            
+            charts.groupby.data.labels = labels;
+            charts.groupby.data.datasets[0].data = data;
+            charts.groupby.options.plugins.title.text = title;
+            charts.groupby.update();
+        }
+        
+        // Update data quality chart
+        function updateDataQualityChart(score) {
+            const cleanData = score;
+            const issuesRemaining = 100 - score;
+            
+            charts.quality.data.datasets[0].data = [cleanData, issuesRemaining];
+            charts.quality.options.plugins.title.text = `Data Quality: ${score}% Clean`;
+            charts.quality.update();
+        }
+        
+        // Update exploration chart
+        function updateExplorationChart(numbers) {
+            charts.explore.data.datasets[0].data = numbers;
+            charts.explore.options.plugins.title.text = `Data Distribution (${numbers.length} points)`;
+            charts.explore.update();
+        }
+        
+        // Update model - FIXED with "Apply Model" button
+        function updateModel() {
+            const modelType = document.getElementById('modelType').value;
+            
+            // Clear any existing trend lines
+            while (charts.model.data.datasets.length > 1) {
+                charts.model.data.datasets.pop();
+            }
+            
+            if (modelType === 'regression') {
+                // Update regression line
+                const xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                const yValues = [2, 4, 5, 4, 5, 7, 8, 9, 10, 12];
+                
+                // Calculate linear regression
+                const n = xValues.length;
+                const sumX = xValues.reduce((a, b) => a + b);
+                const sumY = yValues.reduce((a, b) => a + b);
+                const sumXY = xValues.reduce((sum, x, i) => sum + x * yValues[i], 0);
+                const sumX2 = xValues.reduce((sum, x) => sum + x * x, 0);
+                
+                const b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+                const a = sumY / n - b * sumX / n;
+                
+                // Create regression line points
+                const lineData = [];
+                for (let i = 1; i <= 10; i++) {
+                    lineData.push({x: i, y: a + b * i});
+                }
+                
+                charts.model.data.datasets.push({
+                    label: 'Linear Regression',
+                    data: lineData,
+                    type: 'line',
+                    borderColor: '#e74c3c',
+                    borderWidth: 3,
+                    fill: false,
+                    pointRadius: 0
+                });
+                
+                charts.model.options.plugins.title.text = `Linear Regression: y = ${a.toFixed(2)} + ${b.toFixed(2)}x`;
+                
+                // Update results
+                const rSquared = 0.92;
+                document.getElementById('modelResults').innerHTML = `
+                    <div class="result-card" style="border-color: #3498db;">
+                        <div class="result-label">Model Type</div>
+                        <div class="result-value" style="font-size: 18px;">Linear Regression</div>
+                    </div>
+                    <div class="result-card" style="border-color: #2ecc71;">
+                        <div class="result-label">R-squared</div>
+                        <div class="result-value">${rSquared.toFixed(2)}</div>
+                    </div>
+                    <div class="result-card" style="border-color: #e74c3c;">
+                        <div class="result-label">Slope (b)</div>
+                        <div class="result-value">${b.toFixed(2)}</div>
+                    </div>
+                    <div class="result-card" style="border-color: #9b59b6;">
+                        <div class="result-label">Intercept (a)</div>
+                        <div class="result-value">${a.toFixed(2)}</div>
+                    </div>
+                `;
+                
+            } else if (modelType === 'classification') {
+                charts.model.options.plugins.title.text = 'Classification Model - Decision Boundary';
+                document.getElementById('modelResults').innerHTML = `
+                    <div class="result-card" style="border-color: #3498db;">
+                        <div class="result-label">Model Type</div>
+                        <div class="result-value" style="font-size: 18px;">Classification</div>
+                    </div>
+                    <div class="result-card" style="border-color: #2ecc71;">
+                        <div class="result-label">Accuracy</div>
+                        <div class="result-value">92.5%</div>
+                    </div>
+                    <div class="result-card" style="border-color: #e74c3c;">
+                        <div class="result-label">Precision</div>
+                        <div class="result-value">0.91</div>
+                    </div>
+                    <div class="result-card" style="border-color: #9b59b6;">
+                        <div class="result-label">Recall</div>
+                        <div class="result-value">0.94</div>
+                    </div>
+                `;
+                
+            } else if (modelType === 'clustering') {
+                charts.model.options.plugins.title.text = 'Clustering Model - K-Means (k=3)';
+                document.getElementById('modelResults').innerHTML = `
+                    <div class="result-card" style="border-color: #3498db;">
+                        <div class="result-label">Model Type</div>
+                        <div class="result-value" style="font-size: 18px;">Clustering</div>
+                    </div>
+                    <div class="result-card" style="border-color: #2ecc71;">
+                        <div class="result-label">Clusters (k)</div>
+                        <div class="result-value">3</div>
+                    </div>
+                    <div class="result-card" style="border-color: #e74c3c;">
+                        <div class="result-label">Inertia</div>
+                        <div class="result-value">45.2</div>
+                    </div>
+                    <div class="result-card" style="border-color: #9b59b6;">
+                        <div class="result-label">Silhouette Score</div>
+                        <div class="result-value">0.72</div>
+                    </div>
+                `;
+                
+            } else if (modelType === 'forecasting') {
+                charts.model.options.plugins.title.text = 'Time Series Forecasting - ARIMA';
+                document.getElementById('modelResults').innerHTML = `
+                    <div class="result-card" style="border-color: #3498db;">
+                        <div class="result-label">Model Type</div>
+                        <div class="result-value" style="font-size: 18px;">Time Series</div>
+                    </div>
+                    <div class="result-card" style="border-color: #2ecc71;">
+                        <div class="result-label">MAPE</div>
+                        <div class="result-value">8.2%</div>
+                    </div>
+                    <div class="result-card" style="border-color: #e74c3c;">
+                        <div class="result-label">RMSE</div>
+                        <div class="result-value">12.4</div>
+                    </div>
+                    <div class="result-card" style="border-color: #9b59b6;">
+                        <div class="result-label">Forecast Horizon</div>
+                        <div class="result-value">12 periods</div>
+                    </div>
+                `;
+            }
+            
+            charts.model.update();
+        }
+        
+        // Update interpretation chart
+        function updateInterpretationChart() {
+            // This chart is static for demonstration
+            charts.interpretation.update();
+        }
+        
+        // Update bar chart
+        function updateBarChart() {
+            const categories = document.getElementById('barCategories').value.split(',').map(c => c.trim());
+            const values = document.getElementById('barValues').value.split(',').map(v => parseFloat(v.trim()));
+            const title = document.getElementById('barTitle').value;
+            const color = document.getElementById('barColor').value;
+            
+            charts.bar.data.labels = categories;
+            charts.bar.data.datasets[0].data = values;
+            charts.bar.data.datasets[0].backgroundColor = color;
+            charts.bar.options.plugins.title.text = title;
+            
+            charts.bar.update();
+        }
+        
+        // Update line chart - FIXED with polynomial trend
+        function updateLineChart() {
+            const labels = document.getElementById('lineLabels').value.split(',').map(l => l.trim());
+            const values = document.getElementById('lineValues').value.split(',').map(v => parseFloat(v.trim()));
+            const title = document.getElementById('lineTitle').value;
+            const trendLine = document.getElementById('trendLine').value;
+            
+            charts.line.data.labels = labels;
+            charts.line.data.datasets[0].data = values;
+            charts.line.options.plugins.title.text = title;
+            
+            // Remove any existing trend lines
+            while (charts.line.data.datasets.length > 1) {
+                charts.line.data.datasets.pop();
+            }
+            
+            // Add trend line if selected
+            if (trendLine !== 'none') {
+                const xValues = values.map((_, i) => i);
+                const n = xValues.length;
+                
+                let trendData = [];
+                
+                if (trendLine === 'linear') {
+                    // Linear trend
+                    const sumX = xValues.reduce((a, b) => a + b);
+                    const sumY = values.reduce((a, b) => a + b);
+                    const sumXY = xValues.reduce((sum, x, i) => sum + x * values[i], 0);
+                    const sumX2 = xValues.reduce((sum, x) => sum + x * x, 0);
+                    
+                    const b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+                    const a = sumY / n - b * sumX / n;
+                    
+                    for (let i = 0; i < n; i++) {
+                        trendData.push(a + b * i);
+                    }
+                    
+                    charts.line.data.datasets.push({
+                        label: 'Linear Trend',
+                        data: trendData,
+                        borderColor: '#e74c3c',
+                        borderWidth: 3,
+                        borderDash: [5, 5],
+                        fill: false,
+                        pointRadius: 0
+                    });
+                    
+                } else if (trendLine === 'polynomial') {
+                    // Polynomial trend (2nd degree)
+                    // Using a simple polynomial for demonstration
+                    const a = values.reduce((sum, val) => sum + val, 0) / n;
+                    const b = 0.5;
+                    const c = 0.05;
+                    
+                    for (let i = 0; i < n; i++) {
+                        trendData.push(a + b * i + c * i * i);
+                    }
+                    
+                    charts.line.data.datasets.push({
+                        label: 'Polynomial Trend',
+                        data: trendData,
+                        borderColor: '#2ecc71',
+                        borderWidth: 3,
+                        borderDash: [3, 3],
+                        fill: false,
+                        pointRadius: 0
+                    });
+                }
+            }
+            
+            charts.line.update();
+        }
+        
+        // Update scatter plot
+        function updateScatterPlot() {
+            const xValues = document.getElementById('scatterX').value.split(',').map(v => parseFloat(v.trim()));
+            const yValues = document.getElementById('scatterY').value.split(',').map(v => parseFloat(v.trim()));
+            const xLabel = document.getElementById('scatterXLabel').value;
+            const yLabel = document.getElementById('scatterYLabel').value;
+            
+            // Create data points
+            const minLength = Math.min(xValues.length, yValues.length);
+            const dataPoints = [];
+            for (let i = 0; i < minLength; i++) {
+                dataPoints.push({x: xValues[i], y: yValues[i]});
+            }
+            
+            charts.scatter.data.datasets[0].data = dataPoints;
+            charts.scatter.options.scales.x.title.text = xLabel;
+            charts.scatter.options.scales.y.title.text = yLabel;
+            
+            // Calculate correlation
+            const correlation = calculateCorrelation(xValues.slice(0, minLength), yValues.slice(0, minLength));
+            
+            // Update results
+            document.getElementById('scatterResults').innerHTML = `
+                <div class="result-card" style="border-color: #3498db;">
+                    <div class="result-label">Correlation</div>
+                    <div class="result-value">${correlation.toFixed(3)}</div>
+                </div>
+                <div class="result-card" style="border-color: #2ecc71;">
+                    <div class="result-label">Relationship</div>
+                    <div class="result-value">${correlation > 0.7 ? 'Strong Positive' : correlation > 0.3 ? 'Moderate Positive' : correlation > -0.3 ? 'Weak' : correlation > -0.7 ? 'Moderate Negative' : 'Strong Negative'}</div>
+                </div>
+                <div class="result-card" style="border-color: #e74c3c;">
+                    <div class="result-label">Data Points</div>
+                    <div class="result-value">${minLength}</div>
+                </div>
+                <div class="result-card" style="border-color: #9b59b6;">
+                    <div class="result-label">R-squared</div>
+                    <div class="result-value">${(correlation * correlation).toFixed(3)}</div>
+                </div>
+            `;
+            
+            charts.scatter.update();
+        }
+        
+        // Update pie chart - FIXED with percentages and doughnut chart
+        function updatePieChart() {
+            const categories = document.getElementById('pieCategories').value.split(',').map(c => c.trim());
+            const values = document.getElementById('pieValues').value.split(',').map(v => parseFloat(v.trim()));
+            const chartType = document.getElementById('pieType').value;
+            const showPercentages = document.getElementById('showPercentages').value === 'true';
+            
+            // Update chart type
+            charts.pie.type = chartType;
+            charts.pie.data.labels = categories;
+            charts.pie.data.datasets[0].data = values;
+            
+            // Calculate total for percentages
+            const total = values.reduce((a, b) => a + b, 0);
+            
+            // Update tooltip to show percentages if requested
+            charts.pie.options.plugins.tooltip = {
+                callbacks: {
+                    label: function(context) {
+                        if (showPercentages) {
+                            const percentage = ((context.raw / total) * 100).toFixed(1);
+                            return `${context.label}: ${context.raw} (${percentage}%)`;
+                        }
+                        return `${context.label}: ${context.raw}`;
+                    }
+                }
+            };
+            
+            // Also update legend to show percentages if requested
+            if (showPercentages) {
+                charts.pie.options.plugins.legend = {
+                    position: 'right',
+                    labels: {
+                        generateLabels: function(chart) {
+                            const data = chart.data;
+                            if (data.labels.length && data.datasets.length) {
+                                return data.labels.map(function(label, i) {
+                                    const value = data.datasets[0].data[i];
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return {
+                                        text: `${label}: ${value} (${percentage}%)`,
+                                        fillStyle: data.datasets[0].backgroundColor[i],
+                                        strokeStyle: data.datasets[0].backgroundColor[i],
+                                        lineWidth: 1,
+                                        hidden: false,
+                                        index: i
+                                    };
+                                });
+                            }
+                            return [];
+                        }
+                    }
+                };
+            } else {
+                charts.pie.options.plugins.legend = {
+                    position: 'right',
+                    labels: {
+                        generateLabels: function(chart) {
+                            const data = chart.data;
+                            if (data.labels.length && data.datasets.length) {
+                                return data.labels.map(function(label, i) {
+                                    const value = data.datasets[0].data[i];
+                                    return {
+                                        text: `${label}: ${value}`,
+                                        fillStyle: data.datasets[0].backgroundColor[i],
+                                        strokeStyle: data.datasets[0].backgroundColor[i],
+                                        lineWidth: 1,
+                                        hidden: false,
+                                        index: i
+                                    };
+                                });
+                            }
+                            return [];
+                        }
+                    }
+                };
+            }
+            
+            charts.pie.update();
+        }
+        
+        // Check SQL answer for multiple choice
+        function checkSQLAnswer(button, questionId, selectedAnswer) {
+            const feedback = document.getElementById(`feedback${questionId}`);
+            const allButtons = button.parentElement.querySelectorAll('.option-btn');
+            
+            // Remove previous selections
+            allButtons.forEach(btn => {
+                btn.classList.remove('correct', 'incorrect');
+            });
+            
+            let correctAnswer = 'SELECT * FROM employees WHERE salary > 50000;';
+            
+            if (selectedAnswer === correctAnswer) {
+                button.classList.add('correct');
+                feedback.className = 'feedback correct show';
+                feedback.innerHTML = `<strong>✅ Correct!</strong> The WHERE clause filters rows based on specified conditions.`;
+            } else {
+                button.classList.add('incorrect');
+                feedback.className = 'feedback incorrect show';
+                feedback.innerHTML = `<strong>❌ Incorrect.</strong> The correct answer is: <code>SELECT * FROM employees WHERE salary > 50000;</code>`;
+            }
+        }
+        
+        // Check regular answer
+        function checkAnswer(button, questionId, selectedAnswer) {
+            const feedback = document.getElementById(`feedback${questionId}`);
+            const allButtons = button.parentElement.querySelectorAll('.option-btn');
+            
+            // Remove previous selections
+            allButtons.forEach(btn => {
+                btn.classList.remove('correct', 'incorrect');
+            });
+            
+            const correctAnswers = {
+                1: 'SELECT * FROM employees WHERE salary > 50000;',
+                2: 'average',
+                3: 'scrub',
+                4: 'pie',
+                6: 'correct'
+            };
+            
+            if (selectedAnswer === correctAnswers[questionId]) {
+                button.classList.add('correct');
+                feedback.className = 'feedback correct show';
+                
+                const messages = {
+                    2: `<strong>✅ Correct!</strong> =AVERAGE() is the correct function to calculate the mean of values.`,
+                    3: `<strong>✅ Correct!</strong> The Scrub step involves cleaning data, including handling missing values and removing duplicates.`,
+                    4: `<strong>✅ Correct!</strong> Pie charts are ideal for showing proportions or percentages of a whole.`,
+                    6: `<strong>✅ Correct!</strong> This query uses the correct syntax with AND for multiple conditions and DATE_SUB for date filtering.`
+                };
+                
+                feedback.innerHTML = messages[questionId] || `<strong>✅ Correct!</strong>`;
+            } else {
+                button.classList.add('incorrect');
+                feedback.className = 'feedback incorrect show';
+                
+                const correctMessages = {
+                    2: '=AVERAGE(A1:A10)',
+                    3: 'Scrub',
+                    4: 'Pie Chart',
+                    6: 'SELECT * FROM customers WHERE total_purchases > 100 AND city = \'New York\' AND last_purchase_date >= DATE_SUB(NOW(), INTERVAL 1 MONTH);'
+                };
+                
+                feedback.innerHTML = `<strong>❌ Incorrect.</strong> The correct answer is: ${correctMessages[questionId]}`;
+            }
+        }
+        
+        // Check SQL challenge
+        function checkSQLChallenge() {
+            const query = document.getElementById('sqlChallenge').value.toLowerCase().trim();
+            const feedback = document.getElementById('feedback5');
+            
+            // Check if query is correct
+            const correctQuery = 'select category, sum(total_amount) as total_sales from orders join products on orders.product_id = products.product_id group by category order by total_sales desc';
+            
+            // Simple check for key components
+            const hasSelect = query.includes('select');
+            const hasSum = query.includes('sum') || query.includes('total');
+            const hasGroupBy = query.includes('group by');
+            const hasOrderBy = query.includes('order by');
+            const hasDesc = query.includes('desc') || query.includes('descending');
+            
+            if (hasSelect && hasSum && hasGroupBy && hasOrderBy && hasDesc) {
+                feedback.className = 'feedback correct show';
+                feedback.innerHTML = `<strong>✅ Excellent!</strong> Your query correctly groups sales by category and orders them from highest to lowest.`;
+            } else {
+                feedback.className = 'feedback incorrect show';
+                feedback.innerHTML = `<strong>❌ Not quite right.</strong> A correct solution would be:<br>
+                <code>SELECT category, SUM(total_amount) AS total_sales<br>
+                FROM orders o<br>
+                JOIN products p ON o.product_id = p.product_id<br>
+                GROUP BY category<br>
+                ORDER BY total_sales DESC;</code>`;
+            }
+        }
+        
+        // Helper functions
+        function parseNumbers(input) {
+            return input.split(',')
+                .map(x => parseFloat(x.trim()))
+                .filter(x => !isNaN(x));
+        }
+        
+        function calculateMedian(numbers) {
+            const sorted = [...numbers].sort((a, b) => a - b);
+            const middle = Math.floor(sorted.length / 2);
+            
+            if (sorted.length % 2 === 0) {
+                return (sorted[middle - 1] + sorted[middle]) / 2;
+            } else {
+                return sorted[middle];
+            }
+        }
+        
+        function calculatePercentile(sorted, percentile) {
+            const index = (percentile / 100) * (sorted.length - 1);
+            const lower = Math.floor(index);
+            const upper = Math.ceil(index);
+            
+            if (lower === upper) {
+                return sorted[lower];
+            }
+            
+            const weight = index - lower;
+            return sorted[lower] * (1 - weight) + sorted[upper] * weight;
+        }
+        
+        function calculateCorrelation(x, y) {
+            const n = x.length;
+            const sumX = x.reduce((a, b) => a + b, 0);
+            const sumY = y.reduce((a, b) => a + b, 0);
+            const sumXY = x.reduce((sum, xi, i) => sum + xi * y[i], 0);
+            const sumX2 = x.reduce((sum, xi) => sum + xi * xi, 0);
+            const sumY2 = y.reduce((sum, yi) => sum + yi * yi, 0);
+            
+            const numerator = n * sumXY - sumX * sumY;
+            const denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
+            
+            return denominator === 0 ? 0 : numerator / denominator;
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

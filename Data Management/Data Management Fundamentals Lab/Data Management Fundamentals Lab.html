@@ -314,6 +314,25 @@
             padding-top: 15px;
             border-top: 1px solid #eee;
         }
+
+        /* Add better indentation for pros/cons lists */
+        .pros ul, .cons ul {
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .pros ul {
+            list-style-type: '✅ ';
+        }
+
+        .cons ul {
+            list-style-type: '❌ ';
+        }
         
         /* Tool Comparison */
         .tool-comparison {
@@ -911,6 +930,7 @@
                         
                         <div class="data-input-section">
                             <div class="input-group">
+                                <br>
                                 <label class="input-label">Select Database Type:</label>
                                 <select class="data-input" id="dbType" onchange="showDatabaseExample()">
                                     <option value="ecommerce">E-commerce Database</option>
@@ -1136,9 +1156,17 @@ Follow links in pagination
 Export as JSON format
                                 </textarea>
                             </div>
+                      <!-- Button positioned right after the textarea -->
+                            <button class="calculate-btn" onclick="simulateScraping()" style="margin-top: 30px;">
+                                <span>🕷️</span> Try Scraping Rule
+                            </button>
+                            
+                            <div id="scrapingResults" style="margin-top: 10px;"></div>
                         </div>
                     </div>
-                    
+
+                    <!-- Add this results container for scraping output -->
+                    <div id="scrapingResults" style="margin-top: 20px;"></div>
                     <!-- SurveyMonkey Section -->
                     <div class="interactive-section" id="surveymonkey-section">
                         <div class="example-title">
@@ -1345,17 +1373,25 @@ Export as JSON format
                             </div>
                         </div>
                         
-                        <div class="data-input-section">
+                        <!-- SQL Query Section with Button -->
+                        <div style="margin-top: 30px;">
                             <div class="input-group">
                                 <label class="input-label">Sample SQL Query:</label>
-                                <textarea class="data-input" id="sqlQuery" rows="4" readonly>
-SELECT customers.name, orders.total_amount
-FROM customers
-JOIN orders ON customers.id = orders.customer_id
-WHERE orders.date > '2024-01-01'
-ORDER BY orders.total_amount DESC;
+                                <textarea class="data-input" id="sqlQuery" rows="4" readonly style="margin-bottom: 20px; font-family: 'Consolas', monospace; font-size: 14px;">
+                    SELECT customers.name, orders.total_amount
+                    FROM customers
+                    JOIN orders ON customers.id = orders.customer_id
+                    WHERE orders.date > '2024-01-01'
+                    ORDER BY orders.total_amount DESC;
                                 </textarea>
                             </div>
+                            
+                            <!-- Button to execute/explain the query -->
+                            <button class="calculate-btn" onclick="executeSQLQuery()" style="margin-top: 10px;">
+                                <span>🚀</span> Execute & Explain Query
+                            </button>
+                            
+                            <div id="sqlResults" style="margin-top: 30px;"></div>
                         </div>
                     </div>
                     
@@ -2345,6 +2381,190 @@ ORDER BY orders.total_amount DESC;
             
             document.getElementById('databaseExample').innerHTML = exampleHTML;
         }
+
+        // Execute and explain SQL query
+        function executeSQLQuery() {
+            const query = document.getElementById('sqlQuery').value;
+            
+            // Create SQL results
+            const sqlResults = `
+                <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #3498db; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h4 style="color: #2c3e50; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span>🗃️</span>
+                        SQL Query Results & Explanation
+                    </h4>
+                    
+                    <!-- Query Explanation -->
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #e0e0e0; margin-bottom: 25px;">
+                        <h5 style="color: #3498db; margin-bottom: 15px;">Query Breakdown:</h5>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <div style="margin-bottom: 15px;">
+                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">📊 SELECT Clause:</div>
+                                    <div style="font-size: 14px; color: #666;">
+                                        Retrieves customer names and their order amounts
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 15px;">
+                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">🔗 FROM & JOIN:</div>
+                                    <div style="font-size: 14px; color: #666;">
+                                        Combines customers and orders tables using customer_id
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="margin-bottom: 15px;">
+                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">🎯 WHERE Clause:</div>
+                                    <div style="font-size: 14px; color: #666;">
+                                        Filters orders from January 1, 2024 onward
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 15px;">
+                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">📈 ORDER BY:</div>
+                                    <div style="font-size: 14px; color: #666;">
+                                        Sorts results by order amount (highest first)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Query Results Table -->
+                    <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="background: #3498db; color: white; padding: 15px 20px; font-weight: 600;">
+                            Query Results: Top Customers by Order Amount
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background: #f8f9fa;">
+                                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; color: #2c3e50;">Customer Name</th>
+                                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; color: #2c3e50;">Total Amount</th>
+                                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; color: #2c3e50;">Orders Count</th>
+                                        <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; color: #2c3e50;">Last Order Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 15px;">John Smith</td>
+                                        <td style="padding: 15px; font-weight: 600; color: #2ecc71;">$12,450.00</td>
+                                        <td style="padding: 15px;">8</td>
+                                        <td style="padding: 15px;">2024-03-15</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 15px;">Sarah Johnson</td>
+                                        <td style="padding: 15px; font-weight: 600; color: #2ecc71;">$9,875.50</td>
+                                        <td style="padding: 15px;">6</td>
+                                        <td style="padding: 15px;">2024-03-12</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 15px;">Mike Wilson</td>
+                                        <td style="padding: 15px; font-weight: 600; color: #2ecc71;">$8,220.75</td>
+                                        <td style="padding: 15px;">5</td>
+                                        <td style="padding: 15px;">2024-03-10</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 15px;">Emma Davis</td>
+                                        <td style="padding: 15px; font-weight: 600; color: #2ecc71;">$7,550.25</td>
+                                        <td style="padding: 15px;">4</td>
+                                        <td style="padding: 15px;">2024-03-08</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 15px;">Robert Brown</td>
+                                        <td style="padding: 15px; font-weight: 600; color: #2ecc71;">$6,980.00</td>
+                                        <td style="padding: 15px;">3</td>
+                                        <td style="padding: 15px;">2024-03-05</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Database Schema Visualization -->
+                    <div style="background: #e8f4fc; padding: 20px; border-radius: 10px; border-left: 4px solid #3498db;">
+                        <h5 style="color: #2c3e50; margin-bottom: 15px;">📐 Database Schema Visualization</h5>
+                        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: 8px; min-width: 250px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                                <div style="color: #3498db; font-weight: 600; margin-bottom: 10px;">📋 customers Table</div>
+                                <div style="font-size: 13px;">
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee;">
+                                        <span>id</span>
+                                        <span style="color: #666;">INT PRIMARY KEY</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee;">
+                                        <span>name</span>
+                                        <span style="color: #666;">VARCHAR(100)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee;">
+                                        <span>email</span>
+                                        <span style="color: #666;">VARCHAR(150)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0;">
+                                        <span>join_date</span>
+                                        <span style="color: #666;">DATE</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; min-width: 250px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                                <div style="color: #2ecc71; font-weight: 600; margin-bottom: 10px;">📦 orders Table</div>
+                                <div style="font-size: 13px;">
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee;">
+                                        <span>order_id</span>
+                                        <span style="color: #666;">INT PRIMARY KEY</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee;">
+                                        <span>customer_id</span>
+                                        <span style="color: #666;">INT FOREIGN KEY</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee;">
+                                        <span>total_amount</span>
+                                        <span style="color: #666;">DECIMAL(10,2)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; padding: 5px 0;">
+                                        <span>order_date</span>
+                                        <span style="color: #666;">DATE</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; justify-content: center; min-width: 100px;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 24px; color: #9b59b6; margin-bottom: 10px;">🔗</div>
+                                    <div style="font-weight: 600; color: #2c3e50;">JOIN ON</div>
+                                    <div style="font-size: 12px; color: #666;">customers.id = orders.customer_id</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Performance Metrics -->
+                    <div style="margin-top: 25px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 15px;">⚡ Query Performance</h5>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                            <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;">
+                                <div style="font-size: 24px; font-weight: bold; color: #3498db; margin-bottom: 5px;">5</div>
+                                <div style="font-size: 13px; color: #666; font-weight: 600;">Rows Returned</div>
+                            </div>
+                            <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;">
+                                <div style="font-size: 24px; font-weight: bold; color: #2ecc71; margin-bottom: 5px;">0.05s</div>
+                                <div style="font-size: 13px; color: #666; font-weight: 600;">Execution Time</div>
+                            </div>
+                            <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;">
+                                <div style="font-size: 24px; font-weight: bold; color: #e74c3c; margin-bottom: 5px;">2</div>
+                                <div style="font-size: 13px; color: #666; font-weight: 600;">Tables Joined</div>
+                            </div>
+                            <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;">
+                                <div style="font-size: 24px; font-weight: bold; color: #f39c12; margin-bottom: 5px;">Index Used</div>
+                                <div style="font-size: 13px; color: #666; font-weight: 600;">customer_id, order_date</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('sqlResults').innerHTML = sqlResults;
+        }
         
         // Create survey question
         function createSurveyQuestion() {
@@ -2402,6 +2622,81 @@ ORDER BY orders.total_amount DESC;
             });
             
             document.getElementById('profilingResults').innerHTML = resultsHTML;
+        }
+
+        // Simulate scraping
+        function simulateScraping() {
+            const rule = document.getElementById('scrapyRule').value;
+            
+            const scrapingResults = `
+                <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #3498db; margin-top: 20px;">
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">🕷️ Scraping Simulation Results</h4>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <strong style="color: #3498db;">Rules Applied:</strong>
+                            <div style="margin-top: 10px; font-family: 'Consolas', monospace; font-size: 14px; color: #666;">
+                                ${rule}
+                            </div>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <strong style="color: #2ecc71;">Data Extracted:</strong>
+                            <div style="margin-top: 10px; font-size: 14px;">
+                                • Product: "Wireless Headphones" - $99.99<br>
+                                • Product: "Smart Watch" - $249.99<br>
+                                • Product: "Laptop Stand" - $34.99<br>
+                                • Product: "USB-C Cable" - $19.99<br>
+                                • Product: "Phone Case" - $24.99
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f4fc; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                        <strong>Scraping Statistics:</strong>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 24px; font-weight: bold; color: #3498db;">5</div>
+                                <div style="font-size: 12px; color: #666;">Products Found</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 24px; font-weight: bold; color: #2ecc71;">3</div>
+                                <div style="font-size: 12px; color: #666;">Pages Crawled</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 24px; font-weight: bold; color: #e74c3c;">429.95</div>
+                                <div style="font-size: 12px; color: #666;">Total Value ($)</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 24px; font-weight: bold; color: #f39c12;">2.4s</div>
+                                <div style="font-size: 12px; color: #666;">Time Elapsed</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 15px; font-size: 14px; color: #666;">
+                        <strong>Sample JSON Output:</strong>
+                        <pre style="background: #2c3e50; color: white; padding: 15px; border-radius: 8px; overflow-x: auto; margin-top: 10px; font-size: 12px;">
+        [
+        {
+            "product_name": "Wireless Headphones",
+            "price": 99.99,
+            "category": "Electronics",
+            "rating": 4.5
+        },
+        {
+            "product_name": "Smart Watch",
+            "price": 249.99,
+            "category": "Wearables",
+            "rating": 4.8
+        }
+        ]
+                        </pre>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('scrapingResults').innerHTML = scrapingResults;
         }
         
         // Show threat information
